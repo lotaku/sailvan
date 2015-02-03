@@ -140,7 +140,16 @@ INSTALLED_APPS = (
     'south',
     'reversion',
     'mysite',
-    'polls'
+    'polls',
+	'polls_plugin',
+	'aldryn_blog',
+	'aldryn_common',
+	'django_select2',
+	'djangocms_text_ckeditor',
+	'easy_thumbnails',
+	'filer',
+	'taggit',
+	'hvad',
 )
 
 LANGUAGES = (
@@ -188,3 +197,15 @@ DATABASES = {
     'default':
         {'ENGINE': 'django.db.backends.sqlite3', 'NAME': 'project.db', 'HOST': 'localhost', 'USER': '', 'PASSWORD': '', 'PORT': ''}
 }
+
+SOUTH_MIGRATION_MODULES = {
+    'easy_thumbnails': 'easy_thumbnails.south_migrations',
+}
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)

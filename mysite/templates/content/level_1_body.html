@@ -1,0 +1,24 @@
+
+      <div class="icss_2_0_PSG_leftbox">
+        <div class="icss_2_0_PSG_leftbox_right">
+          <div class="icss_2_2_S1home2_span1">
+            <p>{{ article.brief }}</p>
+          </div>
+        </div>
+      </div>
+        {% for sub_article in sup_articles %}
+      <div class="icss_2_0_PSG_leftbox">
+        <div class="icss_2_0_PSG_leftbox_right">
+          <div class="icss_text_liebiao_S1home1">
+{#              <a href="{% url 'level_2' sub_article.id %}">#}
+                  {{ sub_article.title }}
+{#              </a>#}
+          </div>
+          <div class="icss_text_span">
+            {{ sub_article.brief }}
+          </div>
+{#          <div class="icss_text_jiantou"><a href="{% url 'level_2' sub_article.id %}"><img src="http://www.chinasofti.com/superWebCMS/pages/sites/MainSite/html/zh/images/icss_2_0_PSG/2_0_PSG_jiantou.jpg" width="20" height="22" /></a></div>#}
+          <div class="icss_text_liebiao_S1home2_fenge"></div>
+        </div>
+      </div>
+      {% endfor %}

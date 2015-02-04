@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>footer</title>
+<link href="{% static 'stylecss/yscss.css' %}" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<!--底部排版-->  
+  <div class="footer">
+     <div class="bottom">
+
+         {% for box in footer_boxes %}
+
+             <div class="fleft">
+                 <div class="w53"><img src="{{ MEDIA_URL }}{{ box.img_1 }}" />
+
+                 </div>
+                 <div class="w150">
+                   <h3>{{ box.title }}</h3>
+                   {{ box.body_1|safe }}
+                 </div>
+                {% if box.img_2 %}
+                     <div class="w53"><img src="{{ MEDIA_URL }}{{ box.img_2 }}" />
+                     </div>
+                     <div class="w150">
+                     <br>
+                      <p>{{ box.body_2|safe }}</p>
+                 </div>
+                {% endif %}
+              </div>
+             {% if not forloop.last %}
+                 <span class="w1"><img src="/media/other/footerst.png" /></span>
+             {% endif %}
+         {% endfor %}
+
+
+	 </div>
+  </div>
+
+</body>
+</html>

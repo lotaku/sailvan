@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+{% block banner %}
+    {% include "content/banner.html" %}
+{% endblock %}
+
+
+{% block index_area %}
+    <!--banner end-->
+<!--index-area start-->
+<div class="index-area">
+	<div class="wrapper1">
+
+		<!--中间排版-->
+<div class="center">
+     {% placeholder  "boxes"%}
+{#    <div class="shipin">#}
+{#    <div class="rtxt510">#}
+{#              <h2 class="jx44" >#}
+{#                <a href="{{ box_1.url }}" title="{{ box_1.title }}">{{ box_1.title }}<span class="zb16">{{ box_1.small_title }}</span></a>#}
+{#              </h2>#}
+{#              <p >{{ box_1.body|safe }}</p>#}
+{#              <div class="w50 mt20" >#}
+{#                 <a href="{{ box_1.url }}" title="{{ box_1.title }}">更多 >></a>#}
+{#              </div>#}
+{#            </div>#}
+{#        <div  class="lpic465"><a href="{{ box_1.url }}" title="{{ box_1.title }}"><img src="{{ MEDIA_URL }}{{ box_1.coverImg }}" /></a></div>#}
+{#    </div>#}
+{#   #}
+{#    <div class="jiaoxue">#}
+{#      <div class="spjx">#}
+{#        <div class="txt510">#}
+{#          <h2 class="jx44" >#}
+{#            <a href="{{ box_2.url }}" title="{{ box_2.title }}">{{ box_2.title }}</a>#}
+{#          </h2>#}
+{#		  <p >{{ box_2.body|safe }}</p>#}
+{#		  <div class="w50 mt20" >#}
+{#             <a href="{{ box_2.url }}" title="{{ box_2.title }}">更多 >></a>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div  class="pic465"><a href="{{ box_2.url }}" title="{{ box_2.title }}"><img src="{{ MEDIA_URL }}{{ box_2.coverImg }}" /></a></div>#}
+{#      </div>#}
+{#    </div>#}
+{##}
+{#    <div class="zhibo">#}
+{#         <div class="rtxt510">#}
+{#          <h2 class="jx44" >#}
+{#            <a href="{{ box_3.url }}" title="{{ box_3.title }}">{{ box_3.title }}</a>#}
+{#          </h2>#}
+{#		  <p >{{ box_3.body|safe }}</p>#}
+{#		  <div class="w50 mt20" >#}
+{#             <a href="{{ box_3.url }}" title="{{ box_3.title }}">更多 >></a>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div  class="lpic465"><a href="{{ box_3.url }}" title="{{ box_3.title }}"><img src="{{ MEDIA_URL }}{{ box_3.coverImg }}" /></a></div>#}
+{#    </div>#}
+{##}
+{#    <div class="dianshi">#}
+{#      <div class="ott">#}
+{#        <div class="txt510">#}
+{#          <h2 class="jx44" >#}
+{#            <a href="{{ box_4.url }}" title="{{ box_4.title }}">{{ box_4.title }}</a>#}
+{#          </h2>#}
+{#		  <p >{{ box_4.body|safe }}</p>#}
+{#		  <div class="w50 mt20" >#}
+{#             <a href="{{ box_4.url }}" title="{{ box_4.title }}">更多 >></a>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div  class="pic465"><a href="{{ box_4.url }}" title="{{ box_4.title }}"><img src="{{ MEDIA_URL }}{{ box_4.coverImg }}" /></a></div>#}
+{##}
+{#      </div>#}
+{#    </div>#}
+
+
+  </div>
+		<!--<div class="solu w980 mla mra h350 mb30">
+			<div class="so_img fl"><a href="./solutions/solution1/solution_detail/speedup.html" title="视频播出加速"><img src="http://www.ruiboyun.net/banner/small/speed.jpg" alt="" /></a></div>
+			<div class="so_txt fl">
+				<h2 class="f44 pl2 h100 mt20"><a href="./solutions/solution1/solution_detail/speedup.html" title="视频播出加速">视频播出加速</a></h2>
+				<p>通过睿博云视频加速平台，企业无需托管主机，无需租用昂贵的带宽，无需运维投入，就会拥有低成本、高质量、大并发的互联网视频播出服务能力。</p>
+			</div>
+		</div>-->
+		<div class=" clear"></div>
+	</div>
+
+</div>
+<!--index-area end-->
+{% endblock  %}

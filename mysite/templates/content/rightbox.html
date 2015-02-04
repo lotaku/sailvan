@@ -1,0 +1,24 @@
+
+{% for widget in conmon_widgets %}
+
+<div class="icss_2_0_PSG_box2">
+		<div class="icss_2_0_PSG_rightbox_right_top"> <span class="icss_2_0_PSG__font01">{{ widget.title }}</span></div>
+		<div class="icss_2_0_PSG_rightbox_right_bottom">
+
+            {{ widget.body| safe }}
+
+		</div>
+	</div>
+{% endfor %}
+
+{% for widget in widget_set %}
+
+<div class="icss_2_0_PSG_box2">
+		<div class="icss_2_0_PSG_rightbox_right_top"> <span class="icss_2_0_PSG__font01">{{ widget.title }}</span></div>
+		<div class="icss_2_0_PSG_rightbox_right_bottom">
+
+            {{ widget.body| safe }}
+
+		</div>
+	</div>
+{% endfor %}

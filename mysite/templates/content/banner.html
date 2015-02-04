@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<div class="banner">
+	<!--banner图片 start-->
+	<div class="show">
+		<ul>
+
+            {% for case in index_show_case %}
+            			<li> <a href="{{ case.title_url }}" ><img src="{{ MEDIA_URL }}{{ case.coverImg }}"/></a>
+					<span style="position: absolute;top: {{ case.css_top }}px;left: {{ case.css_left }}px;font-size: 18px; text-align:left;line-height:29px;color:#133a58;font-family: 'Microsoft Yahei';">{{ case.body|safe }}</span>
+			</li>
+            {% endfor %}
+{#			<li> <a href="./products/media_server/product_detail/media_server.html" ><img src="http://www.ruiboyun.net/./banner/big/201301/media_server.jpg"/></a>#}
+{#					<span style="position: absolute;top: 213px;left: 960px;font-size: 18px; text-align:left;line-height:29px;color:#133a58;font-family: 'Microsoft Yahei';">在普通双核CPU设备上实现5000+并发播出的流媒体服务器,<br />支持RTMP、RTSP、HLS等协议播出，面向Windows、iOS<br />Android等终端提供稳定流畅的视频直播、时移、点播服务。 </span>#}
+{#			</li>#}
+{##}
+{#            <li> <a href="./products/Leasing/Leasing.html" ><img src="http://www.ruiboyun.net/./banner/big/201304/Leasing_spbj.jpg"/></a>#}
+{#					<span style="position: absolute;top: 170px;left: 470px;font-size: 18px; text-align:left;line-height:29px;color:#133a58;font-family: 'Microsoft Yahei';">无需购买硬件设备和软件系统<br />无需租用IDC机位和带宽<br />无需专业运维团队，节约成本50%<br />#}
+{#快速开通百万级用户规模的视频播出服务<br />面向所有终端，提供多协议、大并发、高清流畅的视频播出服务</span>#}
+{#			</li>#}
+{##}
+{#			<li> <a href="./products/encode_vedio/products.html" ><img src="http://www.ruiboyun.net/./banner/big/201303/encode.jpg"/> </a>#}
+{#				<span style="position: absolute;top: 200px;left: 1000px;font-size: 18px; text-align:left;line-height:29px;color:#133a58;font-family: 'Microsoft Yahei';">专业的互联网直播设备和软件系统，对各类现场信号、<br />#}
+{#电视信号、电脑屏幕、视频文件进行采集编码，实时流化发<br />#}
+{#布到NTV Media Server上，实现高质量视频在线直播</span>#}
+{#			</li>#}
+
+			<!--<li> <a href="./products/encode_vedio/product_detail/live_encoder_pc.html" ><img src="http://www.ruiboyun.net/./banner/big/201303/windows.jpg"/> </a>
+				<span style="position: absolute;top: 200px;left: 1000px;font-size: 18px; text-align:left;line-height:29px;color:#133a58;font-family: 'Microsoft Yahei';">对摄像机、电脑屏幕、视频文件等内容进行采集编码，<br />
+实时流式化发布到NTV Media Server、Adobe Media Server、<br />
+Red5等流媒体服务器上，实现在线直播。</span>
+			</li>
+			<li> <a href="./products/encode_vedio/product_detail/live_encoder_android.html" ><img src="http://www.ruiboyun.net/./banner/big/201210/android.jpg"/> </a>
+				<span style="position: absolute;top: 222px;left: 480px;font-size: 18px; text-align:left;line-height:29px;color:#5c973b;font-family: 'Microsoft Yahei';">通过Andriod智能手机终端进行视频采集编码，实时流式化发布到<br />
+NTV Media Server、Adobe Media Server、Red5等流媒体服<br />
+务器上，实现移动拍摄和直播。</span>
+			</li>-->
+		</ul>
+	</div>
+	<!--banner图片 end-->
+	<!--滚动新闻 start-->
+	<div class="png hot">
+		<div class="wrapper rel" style="width:980px;margin:0 auto;">
+			<div class="list"> </div>
+			<!--banner图片焦点 start-->
+			<div class="focus png"> <a href="#392143" class="on"></a> <a href="#357656"></a> <a href="#357656"></a> <!--<a href="#380985"></a>--> </div>
+			<!--banner图片焦点 end-->
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!--滚动新闻 end-->
+	<!--弹出新闻 start-->
+
+	<!--弹出新闻 end-->
+</div>

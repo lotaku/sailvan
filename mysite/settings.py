@@ -1,6 +1,8 @@
+# -*- coding: UTF-8 –*-
 import os
 gettext = lambda s: s
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 """
 Django settings for mysite project.
 
@@ -150,6 +152,11 @@ INSTALLED_APPS = (
 	'filer',
 	'taggit',
 	'hvad',
+    'mysite.content',
+    'mysite.core',
+    'ckeditor',
+    'content_plugin',
+
 )
 
 LANGUAGES = (
@@ -186,7 +193,9 @@ CMS_LANGUAGES = {
 CMS_TEMPLATES = (
     ## Customize this
     ('page.html', 'Page'),
-    ('feature.html', 'Page with Feature')
+    ('feature.html', 'Page with Feature'),
+    ('footer_test.html', 'Page with footer'),
+    ('index.html', 'Page with Index'),
 )
 
 CMS_PERMISSION = True
@@ -209,3 +218,27 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
+
+
+
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = (
+	os.path.join(PROJECT_ROOT, 'static'),
+    # os.path.join(BASE_DIR, "static"),
+    # os.path.join(PROJECT_ROOT, "static"),
+    # '/var/www/static/',
+)
+CKEDITOR_UPLOAD_PATH = "ckeditor_uploads/"
+CKEDITOR_JQUERY_URL = 'http://code.jquery.com/jquery-1.7.2.min.js'
+
+# 数据库备份
+DBBACKUP_BACKUP_DIRECTORY = os.path.join(PROJECT_ROOT,'dbbackup')
+# DBBACKUP_MEDIA_PATH = os.path.join(PROJECT_ROOT,'media_backup')
+if not os.path.exists(DBBACKUP_BACKUP_DIRECTORY):
+	os.mkdir(DBBACKUP_BACKUP_DIRECTORY)
+# if not os.path.exists(DBBACKUP_MEDIA_PATH):
+# 	os.mkdir(DBBACKUP_MEDIA_PATH)

@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<div class="icss_2_0_PSG_banner">
+    <div id="silder_img" style="overflow:hidden; width:1000px;">
+        {% if article.bannerImg %}
+            <div id="bannerImg"  > <img src="{{ MEDIA_URL }}{{ article.bannerImg }}" alt="{{ article.title }}" title="{{ article.title }}" style="height:114px; position: relative;"/> </div>
+
+            {% else %}
+            <div id="bannerImg"  > <img src="{%  static article.get_range_bannerImg %} " alt="{{ article.title }}" title="{{ article.title }}" style="height:114px; position: relative;"/> </div>
+
+
+        {% endif %}
+
+          </div>
+  </div>

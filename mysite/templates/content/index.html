@@ -1,0 +1,156 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/tpl.dwt" codeOutsideHTMLIsLocked="false" -->
+{% include "content/head.html" %}
+
+<body>
+
+
+	<!--头部 start-->
+
+	<div class="head">
+		<div class="wrapper all_bg rel" >
+			<!--搜索 start-->
+			<!--搜索 end-->
+			<!--logo start-->
+			<h1><a href="/index.html" title="云视睿博"></a></h1>
+			<!--logo end-->
+			<!--Global start-->
+			<div  class="global white">  </div>
+			<!--Global end-->
+			<!--导航 start-->
+            {% include "content/menu_top.html" %}
+			<!--导航 end-->
+		</div>
+	</div>
+	<!--头部 end-->
+<div class="clear"></div>
+	<!-- InstanceBeginEditable name="contents" -->
+<!--banner start-->
+
+{% include "content/banner.html" %}
+
+<!--banner end-->
+<!--index-area start-->
+<div class="index-area">
+	<div class="wrapper1">
+
+		<!--中间排版-->
+<div class="center">
+    <div class="shipin">
+<div class="rtxt510">
+          <h2 class="jx44" >
+            <a href="{{ box_1.url }}" title="{{ box_1.title }}">{{ box_1.title }}<span class="zb16">{{ box_1.small_title }}</span></a>
+          </h2>
+		  <p >{{ box_1.body|safe }}</p>
+		  <div class="w50 mt20" >
+             <a href="{{ box_1.url }}" title="{{ box_1.title }}">更多 >></a>
+          </div>
+        </div>
+        <div  class="lpic465"><a href="{{ box_1.url }}" title="{{ box_1.title }}"><img src="{{ MEDIA_URL }}{{ box_1.coverImg }}" /></a></div>
+    </div>
+
+    <div class="jiaoxue">
+      <div class="spjx">
+        <div class="txt510">
+          <h2 class="jx44" >
+            <a href="{{ box_2.url }}" title="{{ box_2.title }}">{{ box_2.title }}</a>
+          </h2>
+		  <p >{{ box_2.body|safe }}</p>
+		  <div class="w50 mt20" >
+             <a href="{{ box_2.url }}" title="{{ box_2.title }}">更多 >></a>
+          </div>
+        </div>
+        <div  class="pic465"><a href="{{ box_2.url }}" title="{{ box_2.title }}"><img src="{{ MEDIA_URL }}{{ box_2.coverImg }}" /></a></div>
+      </div>
+    </div>
+
+    <div class="zhibo">
+         <div class="rtxt510">
+          <h2 class="jx44" >
+            <a href="{{ box_3.url }}" title="{{ box_3.title }}">{{ box_3.title }}</a>
+          </h2>
+		  <p >{{ box_3.body|safe }}</p>
+		  <div class="w50 mt20" >
+             <a href="{{ box_3.url }}" title="{{ box_3.title }}">更多 >></a>
+          </div>
+        </div>
+        <div  class="lpic465"><a href="{{ box_3.url }}" title="{{ box_3.title }}"><img src="{{ MEDIA_URL }}{{ box_3.coverImg }}" /></a></div>
+    </div>
+
+    <div class="dianshi">
+      <div class="ott">
+        <div class="txt510">
+          <h2 class="jx44" >
+            <a href="{{ box_4.url }}" title="{{ box_4.title }}">{{ box_4.title }}</a>
+          </h2>
+		  <p >{{ box_4.body|safe }}</p>
+		  <div class="w50 mt20" >
+             <a href="{{ box_4.url }}" title="{{ box_4.title }}">更多 >></a>
+          </div>
+        </div>
+        <div  class="pic465"><a href="{{ box_4.url }}" title="{{ box_4.title }}"><img src="{{ MEDIA_URL }}{{ box_4.coverImg }}" /></a></div>
+
+      </div>
+    </div>
+  </div>
+		<!--<div class="solu w980 mla mra h350 mb30">
+			<div class="so_img fl"><a href="./solutions/solution1/solution_detail/speedup.html" title="视频播出加速"><img src="http://www.ruiboyun.net/banner/small/speed.jpg" alt="" /></a></div>
+			<div class="so_txt fl">
+				<h2 class="f44 pl2 h100 mt20"><a href="./solutions/solution1/solution_detail/speedup.html" title="视频播出加速">视频播出加速</a></h2>
+				<p>通过睿博云视频加速平台，企业无需托管主机，无需租用昂贵的带宽，无需运维投入，就会拥有低成本、高质量、大并发的互联网视频播出服务能力。</p>
+			</div>
+		</div>-->
+		<div class=" clear"></div>
+	</div>
+
+</div>
+<!--index-area end-->
+
+<!--footerHtml start-->
+<iframe id="footer" src="{% url 'footer' %}" width="100%" frameborder="0"  height="250px" border="0" scrolling="no"></iframe>
+<!--footerHtml end-->
+
+<div id="win"></div>
+{% include 'content/fotter_js.html' %}
+
+<script type="text/javascript">
+$(function(){
+	$('.banner .show ul li:eq(0)').show();
+	$(".hot .list div").jCarouselLite({btnNext: ".hot .list .next",btnPrev: ".hot .list .prev",auto:5000,speed:300,vertical:true,visible:1});
+	var speed = 10000,iNum = 0;
+	for(i=0;i<$('.banner .show ul li').length;i++){
+		if(i==0){$('.tab').append('<a href=\"#1\" class=\"on\">1</a>');}
+		else{$('.tab').append('<a href=\"#1\">'+(i+1)+'</a>');}
+		}
+	$('.banner .focus a').bind('click',function(){
+			var aIndex = $('.banner .focus a').index(this);
+			$('.on').removeClass('on');
+			$(this).addClass('on');
+			$('.banner .show ul li').fadeOut().eq(aIndex).fadeIn();
+			iNum = aIndex;
+			})
+	var autoPlay = function(){
+		iNum++;
+		if(iNum == $('.banner .show ul li').length){iNum=0;}
+		$('.on').removeClass('on');
+		$('.banner .focus  a').eq(iNum).addClass('on');
+		$('.banner .show ul li').fadeOut().eq(iNum).fadeIn(1000);
+		};
+	var timer = setInterval(autoPlay,speed);
+	$('.banner .show,.banner .focus').hover(function(){clearInterval(timer);},function(){timer = setInterval(autoPlay,speed);});
+  });//banner轮换效果
+	$(".banner .close-btn").bind("click",function(){
+		$(".news-show").animate({top:430})
+	});
+	$(".box_btn").bind("click",function(){
+		$(".news-show").animate({top:218});
+
+});
+</script>
+
+<!--[if lte IE 6]><script type="text/javascript" src="./images/PNG.js"></script><![endif]-->
+  <!-- InstanceEndEditable -->
+
+</body>
+<!-- InstanceEnd --></html>

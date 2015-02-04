@@ -1,0 +1,109 @@
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link href="http://www.ruiboyun.com/stylecss/yscss.css" type="text/css" rel="stylesheet"/>
+        <title>{% block title %}This is my new project home page{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% render_block "css" %}
+{#    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">#}
+{#    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">#}
+</head>
+
+<body>
+
+
+{% cms_toolbar %}
+{% render_block "js" %}
+{#        <div class="container">#}
+{#          <div class="navbar navbar-default" role="navigation">#}
+{#            <div class="navbar-header">#}
+{#              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">#}
+{#                <span class="sr-only">Toggle navigation</span>#}
+{#                <span class="icon-bar"></span>#}
+{#                <span class="icon-bar"></span>#}
+{#                <span class="icon-bar"></span>#}
+{#              </button>#}
+{#              <a class="navbar-brand" href="#">Project name</a>#}
+{#            </div>#}
+{#            <div class="navbar-collapse collapse">#}
+{#              <ul class="nav navbar-nav">#}
+{#                {% show_menu 0 1 100 100 "menu.html" %}#}
+{#              </ul>#}
+{#            </div>#}
+{#          </div>#}
+{#        {% block content %}#}
+{#        {% endblock content %}#}
+{#        </div>#}
+{#    <script src="http://code.jquery.com/jquery.js"></script>#}
+{#    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>#}
+
+
+
+<!--底部排版-->
+ <div class="footer">
+     <div class="bottom">
+
+       <div class="fleft">
+         {% block box1 %}
+
+         <div class="w53">
+             {% placeholder 'img_1' %}
+         </div>
+         <div class="w150">
+             {% placeholder 'box1' %}
+
+         </div>
+        {% endblock box1 %}
+
+{#         <div class="w53"><img src="http://www.ruiboyun.com/images/modi/dz.png" /></div>#}
+{#         <div class="w150">#}
+{#           <h3>公司地址</h3>#}
+{#           <p>北京市海淀区上地信息路1号#}
+{#中关村国际创业园B栋834#}
+{##}
+{#            <br />邮编：100085</p>#}
+{#         </div>#}
+       </div>
+
+           <span class="w1"><img src="http://www.ruiboyun.com/images/modi/footerst.png" /></span>
+
+       <div class="fcenter">
+                  <div class="w40"><img src="http://www.ruiboyun.com/images/modi/phone.png" /></div>
+         <div class="w160">
+           <h3>联系电话</h3>
+           <p>
+           客服电话：400-088-9255
+<br />          固      话：+86-10-82895303
+<br />传      真：+86-10-82895303
+<br />电子邮件：service@novel-tv.com
+     <br /> Q Q：2539783387</p>
+         </div>
+       </div>
+
+           <span class="w1"><img src="http://www.ruiboyun.com/images/modi/footerst.png" /></span>
+
+       <div class="fright">
+                         <div class="w40"><img src="http://www.ruiboyun.com/images/modi/yun.png" />
+<img src="http://www.ruiboyun.com/images/modi/anq.png" />
+                         </div>
+
+         <div class="w160">
+           <h3>网站信息</h3>
+           <p>
+          Copyright©2014 Beijing Novel-TV Meida Tech. Co.,Ltd.
+
+<br />All Rights Reserved
+<br />云视睿博 版权所有
+<br /><br />京ICP备14034410号
+</p>
+         </div>
+
+       </div>
+	 </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+{% load staticfiles  %}
+{% load content_filter %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BPO服务 - 外包服务 - 万维合丰</title>
+<meta  name="keywords" content="服务外包, 外包服务,人力资源外包, IT人才派遣服务,产品工程服务, 产品研发与测试服务, 产品部署与支持服务,IT外包服务(ITO), IT基础设施管理服务, 应用开发与测试服务, 遗留系统升级及移植服务,业务流程外包(BPO), 业务流程外包服务, 客户联络中心服务, BPO服务,BPO, EPO服务, EPO, KPO服务, KPO,语言全球化服务, 软件产品全球化服务,多媒体内容翻译服务"  />
+<meta name="description" content="外包服务是指企业或者经济实体将自己业务流程或者部分职能从自身的业务运作中分离出来交给第三方实体提供相关专业化服务。万维合丰提供的外包服务主要包括：人力资源外包、产品工程工程服务、IT外包服务、业务流程外包和语言全球化服务。" />
+
+<script src="{% static  'js/jquery-1.11.2.js' %}" language="javascript" type="text/javascript"> </script>
+<script src="{% static  'js/header-slider.js' %}" language="javascript" type="text/javascript"></script>
+<link href="{% static  'header.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static  'icss_css/icss_2_0_outsourcing_css.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static  'icss_css/icss_2_2_outsourcinghome2.css' %}" rel="stylesheet" type="text/css" />
+{#<script type="text/javascript">#}
+{##}
+{#  var _gaq = _gaq || [];#}
+{#  _gaq.push(['_setAccount', 'UA-34957908-1']);#}
+{#  _gaq.push(['_trackPageview']);#}
+{##}
+{#  (function() {#}
+{#    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;#}
+{#    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';#}
+{#    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);#}
+{#  })();#}
+{##}
+{#</script>#}
+</head>
+<body onload="Windonload();countInfo(2639);">
+<div id="wrap">
+    {% include "content/top.html" %}
+
+
+  <div class="icss_2_0_PSG_banner">
+    <div id="silder_img" style="overflow:hidden; width:1000px;">
+{#      <div id="bannerImg"  > <img src="{% static article.bannerImg %}" alt="BPO服务" title="BPO服务" style="height:114px; position: relative;"/> </div>#}
+      <div id="bannerImg"  > <img src="http://www.chinasofti.com/superWebCMS/pages/sites/MainSite/html/zh/images/icss_2_0_PSG/logo/2.9.bar11.jpg" alt="BPO服务" title="BPO服务" style="height:114px; position: relative;"/> </div>
+    </div>
+  </div>
+  <!--middle_wrap-->
+  <!--middle_bottom-->
+  <div class="icss_2_0_PSG_bankuai">
+
+    <div class="icss_2_2_S1home2_box1">
+     {{ article |render_left_menu }}
+    </div>
+      <div class="icss_2_2_S1home2_box2">
+      {{   article|render_body}}
+
+
+    </div>
+    
+   <div style="float:left; width:230px;">
+
+
+       {{ article | render_rightbox }}
+
+
+	</div>
+    
+  </div>
+  <!--bankuai-->
+  <!--bottom-->
+  <br class="clear" />
+  <div id="footer">
+	<div class="footer_main">
+  <p class="hdlink"> <span style="font:12px ">版权所有</span> <span style="font:12px Calibri">&copy; 2000-2014</span>&nbsp;<span style="font:12px ">万维合丰公司</span> &nbsp;&nbsp;<a href="../privacy/privacy.shtml" style="font:12px  ;margin-left:12px;" >隐私声明</a> | <a href="../about/contact/contact.shtml" style="font:12px " >联系我们</a> </p>
+</div>
+    <!--footer_main-->
+  </div>
+  <!--footer-->
+</div>
+<!--wrap-->
+</body>
+</html>

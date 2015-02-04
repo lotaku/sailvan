@@ -14,6 +14,7 @@ urlpatterns = i18n_patterns('',
         {'sitemaps': {'cmspages': CMSSitemap}}),
 	url(r'^polls/', include('polls.urls', namespace='polls')),
 	url(r'^aldryn_blog/', include('aldryn_blog.urls', namespace='aldryn_blog')),
+	(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^', include('cms.urls')),
 
 )

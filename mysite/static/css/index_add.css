@@ -1,0 +1,27 @@
+@charset "utf-8";
+/*----------------------------------------------------------------------------------------------
+首页样式 - 首页样式
+-------------------------------------------------------------------------------------------------*/
+
+/*首页大块*/
+
+.w980{width: 980px;}
+.h100{height: 100px;}
+.h350{height: 350px;}
+.f44{font-size: 44px;}
+.pl2{padding-left: 2em;}
+.fl{display: inline; float: left;}
+.mla{margin-left: auto;}
+.mra{margin-right: auto;}
+.mt20{margin-top: 20px;}
+.mb30{margin-bottom: 30px;}
+.so_img{width: 470px;}
+.so_img a img{width: 464px; height: 330px;}
+.so_txt{width: 510px;}
+.so_txt h2{line-height: 60px;}
+.so_txt p{padding: 0 0 0 90px;font-size: 20px; line-height: 30px; color: #000; width: 460px;text-align: justify;}
+
+/*首页每块的更多*/
+.pl90{padding: 0 0 0 90px;}
+.w450{width: 450px;}
+.ta{text-align: right;}

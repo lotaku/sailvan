@@ -1,0 +1,74 @@
+{% load static %}
+{% if article.brief %}
+<div class="icss_2_0_PSG_leftbox">
+        <div class="icss_2_0_PSG_leftbox_right">
+          <div class="icss_2_2_S1home2_span1">{{ article.brief }}</div>
+        </div>
+      </div>
+{% endif %}
+<div class="icss_2_2_S1home2_box2">
+        {% if only_one_page %}
+            <div  id="page1" class="icss_2_0_PSG_leftbox">
+            {{ body |safe }}
+
+              </div>
+         {% else %}
+
+        {% for i in index_list %}
+
+            {% if i == 0 %}
+                <div id="page1" class="icss_2_0_PSG_leftbox">
+                {{ page1 | safe }}
+                 </div>
+            {% else %}
+
+                 <div style="display:none;" id="page2" class="icss_2_0_PSG_leftbox">
+
+                     {% with "page"|add:i as page %}
+                          {{ page | safe }}
+                      {% endwith %}
+                </div>
+            {% endif %}
+
+        {% endfor %}
+            <div class="icss_text_liebiao_S1home1" id="pagNavigator">
+
+            <div style="float:right"> <img alt="" src="../images/arrow_left.gif">
+
+                &nbsp;&nbsp;<a style="color:#333; display:inline-block" href="#page1">1</a>
+                &nbsp;&nbsp;<a style="display:inline-block" href="#page2">2</a>
+
+                &nbsp;&nbsp;<img alt="" src="../images/arrow_right.gif"></div>
+
+
+             </div>
+
+    {% endif %}
+
+{#</div>#}
+
+<script type="text/javascript" language="javascript">
+		$(document).ready(function()
+		{
+			$("#pagNavigator a").each(function()
+			{
+
+				$(this).click(function(){
+					var id = $(this).attr("href");
+
+					$("#page1").hide();
+					$("#page2").hide();
+					$("#page3").hide();
+
+					$("#page2").show();
+					$("#pagNavigator a").css("color","#85adcd");
+					$(this).css("color","#333");
+
+				});
+			});
+		});
+</script>
+
+
+
+</div>

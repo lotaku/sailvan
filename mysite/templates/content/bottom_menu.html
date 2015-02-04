@@ -1,0 +1,155 @@
+<!--bottom start-->
+    <div class="footer_wrapper1">
+        <div class="footer cf">
+        	<div class="menu">
+            	<h2 style="display:none;">
+{#                	<em>新闻</em>#}
+                    <div >
+			 <script language="javascript" type="text/javascript">
+
+			  var vncount=0;
+			  var vncur = 0;
+			  var tn=0;
+
+			  function getnews(){
+				$("#newroom").empty().append($("#lb122",document.getElementById("iframeNews").contentWindow.document).html());
+
+				$("#newroom div.digg").remove();
+				var alist = new Array();
+				$("#newroom a[name='mainInfo']").each(function( index)
+				{
+					$(this).attr("target","_self");
+					var href=$(this).attr("href");
+					href ="about/newsroom/news.shtml?url="+encodeURI(href);
+					$(this).attr("href",href);
+
+					$(this).css({display:"block",font:"12px/33px 'Calibri', 'Arial', '宋体'",textDecoration:"none",color:"#fff"});
+					alist[index] = this;
+				});
+				 $("#newroom").empty();
+				for( i = 0; i < alist.length && i <3; i++)
+				{
+					 $(alist[i]).attr("id","ida"+i);
+					 $(alist[i]).css({display:"none"});
+					 $("#newroom").append(alist[i]);
+					 vncount =i;
+				}
+				$("#newroom a").each(function()
+				{
+					$(this).hover(function() { clearInterval(tn) }, function() { tn = setInterval("showAuto2()", 2000); });
+				});
+				vncur = -1;
+				showAuto2();
+
+				tn = setInterval("showAuto2()",3000);
+			  }
+
+			  /***********  自动播放 新闻  ***************/
+				function showAuto2()
+				{
+					 $("#ida"+vncur).hide();
+					 vncur = vncur >= vncount ? 0 : vncur + 1;
+					 $("#ida"+vncur).show();
+
+				}
+			 </script>
+{#         <iframe id="iframeNews" style=" display:none" frameborder="0" height="0" width="0"scrolling="no" marginheight="0px" marginwidth="0px" src="/superWebCMS/pages/sites/MainSite/More/List_2_2657.html"   onload="getnews()"> </iframe>#}
+
+        <style>
+		.newroom a:active,a:hover,a:vistived{
+		color:#fff;
+		}
+		</style>
+			<div id="newroom" style="height:34px; overflow:hidden; float:left; margin:1px 0 0 5px;"> </div>
+        </div>
+                </h2>
+                <ul>
+                    {% for case in index_show_case %}
+                    <li>
+                        {% if case.coverImg %}
+                            <span class="m_img"><img src="{{ MEDIA_URL }}{{ case.coverImg }}"></span>
+                        {% endif %}
+
+                        <em><a href="{{ case.title_url }}">{{ case.title }}</a></em>
+                        <p><a href="{{ case.body_url }}">{{ case.body |safe }}</a></p>
+                    </li>
+                    {% endfor %}
+{#                    <li>#}
+{#                    	<span class="m_img"><img src="{% static  'images/jf_logoi.jpg'%}"></span>#}
+{#                        <em><a href="http://www.chinasofti.com/superWebCMS/pages/sites/MainSite/html/zh/about/newsroom/media_report.shtml">媒体聚焦</a></em>#}
+{#                        <p><a href="http://www.chinasofti.com/superWebCMS/pages/sites/MainSite/html/zh/about/newsroom/media_report.shtml?url=/superWebCMS/pages/sites/MainSite/html/2014-12-19/2_2658_2014-12-19_4403.html">解放JointForce平台是万维合丰变革的开始，从大公司转向大平台，让万维合丰有机会实现自身效率提升，实现产业效率提升，让从业人员有一个美好生活的开始。</a></p>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                    	<!--<span><img src="{% static  'images/magazine/2014B.jpg'%}"></span>-->#}
+{#                        <em><a href="http://www.chinasofti.com/superWebCMS/pages/sites/MainSite/html/zh/about/overview/mission_vision.shtml">万维合丰核心价值观</a></em>#}
+{#                        <!--<p class="first">万维合丰企业刊物</p>-->#}
+{#                        <p><a href="http://www.chinasofti.com/superWebCMS/pages/sites/MainSite/html/zh/about/overview/mission_vision.shtml">奋斗为本、成就客户、创造分享、共同成长。此十六个字的价值观为万维合丰长期艰苦奋斗的总结，是引领公司发展的精神基石。</a></p>#}
+{#                        #}
+{#                    </li>#}
+
+                </ul>
+            </div>
+{#            <dl style="width:256px;padding-left:14px;">#}
+{#                <dt><a href="{% url 'level_2' 50 %}">行业</a></dt>#}
+{#                <dd style="width:36%;">#}
+{#                	<p><a href="{% url 'level_2' 52 %}">政府</a></p>#}
+{#               		<p><a href="{% url 'level_2' 51 %}">银行金融</a></p>#}
+{#                	<p><a href="{% url 'level_2' 53 %}">保险证券</a></p>#}
+{#               		<p><a href="{% url 'level_2' 54 %}">移动应用</a></p>#}
+{#                </dd>#}
+{#                <dd>#}
+{#                	<p><a href="trade/mobile_applicationss.shtml">移动应用</a></p>#}
+{#               		<p><a href="trade/telecom.shtml">电信</a></p>#}
+{#                	<p><a href="trade/information_technology.shtml">信息技术</a></p>#}
+{#               		<p><a href="trade/energy.shtml">能源电力</a></p>#}
+{#                </dd>#}
+{#            </dl>#}
+{#            <dl style="width:210px;">#}
+{#                <dt><a href="#">核心优势</a></dt>#}
+{#                <dd>#}
+{#                	<p><a href="#">丰富的服务目录</a></p>#}
+{#               		<p><a href="#">深厚的行业积累</a></p>#}
+{#                	<p><a href="#">先进的平台软件</a></p>#}
+{#               		<p><a href="#">领先的技术优势</a></p>#}
+{#                	<p><a href="#">全球化的提交能力</a></p>#}
+{#                    <p><a href="#">充足的人才供应</a></p>#}
+{#                </dd>#}
+{#            </dl>#}
+{#            <dl style="width:176px;">#}
+{#                <dt><a href="#">投资者</a></dt>#}
+{#                <dd>#}
+{#                	<p><a href="#">财务报表</a></p>#}
+{#               		<p><a href="#">联交所公告</a></p>#}
+{#                	<p><a href="#">IR日历</a></p>#}
+{#               		<p><a href="#">分析师信息</a></p>#}
+{#                	<p><a href="#">财务摘要</a></p>#}
+{#                    <p><a href="#">股权结构</a></p>#}
+{#                    <p><a href="#">推介材料 </a></p>#}
+{#                </dd>#}
+{#            </dl>#}
+{#            <dl>#}
+{#                <dt><a href="#">关于万维合丰</a></dt>#}
+{#                <dd>#}
+{#                	<p><a href="#">公司简介</a></p>#}
+{#               		<p><a href="#">发展历史</a></p>#}
+{#                	<p><a href="#">愿景和使命</a></p>#}
+{#               		<p><a href="#">管理团队</a></p>#}
+{#                	<p><a href="#">公司荣誉</a></p>#}
+{#                    <p><a href="#">社会责任</a></p>#}
+{#                    <p><a href="#">新闻中心</a></p>#}
+{#                </dd>#}
+{#            </dl>#}
+{#            <dl style="width:100px;">#}
+{#                <dt><a href="#">加入我们</a></dt>#}
+{#                <dd>#}
+{#                	<p><a href="#">CEO致词</a></p>#}
+{#               		<p style="width:90px;"><a href="#">万维合丰公司</a></p>#}
+{#                	<p><a href="#">公司理念</a></p>#}
+{#               		<p><a href="#">社会招聘</a></p>#}
+{#                	<p><a href="#">薪酬福利</a></p>#}
+{#                    <p><a href="#">工作机会</a></p>#}
+{#                </dd>#}
+{#            </dl>#}
+        </div>
+    </div>
+    <!--bottom end-->

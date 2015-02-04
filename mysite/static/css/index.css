@@ -1,0 +1,35 @@
+@charset "utf-8";
+/*----------------------------------------------------------------------------------------------
+首页样式 - 首页样式
+-------------------------------------------------------------------------------------------------*/
+/*banner 切换*/
+.banner{ position:relative;height:420px; overflow:hidden;width:100%;}
+
+.banner .show{ width:1920px; position:absolute; left:50%;top:0px; margin-left:-960px; height:420px; overflow:hidden; }
+
+.banner .show ul{ position:relative; height:420px; overflow:hidden;width:1920px; float:left; }
+
+.banner .show ul li{text-align:center;width:1920px; float:left; height:420px; position:absolute; display:none}
+
+.banner .focus {position:absolute;width:120px; padding-left:10px;padding-top:13px; bottom:0px; right:0px; height:29px;}
+
+.banner .focus a{width:14px; height:14px; background:url(http://www.ruiboyun.net/images/ico01.png) no-repeat left -24px; float:left; margin-left:10px; display:inline-block}
+
+.banner .focus a.on{  background:url(http://www.ruiboyun.net/images/ico01.png) no-repeat left top}
+
+
+.hot{ width:100%;
+    background:url(http://www.ruiboyun.net/images/bg03.png)repeat-x;
+    height:42px; line-height:42px; position:absolute; bottom:0; z-index:2}
+
+.hot .list{ float:left; width:860px; padding-left:10px; height:42px; position:relative; float:left;/* font-family:'Microsoft Yahei';*/}
+
+/*首页方块*/
+
+.index-area{width:100%; background:url(http://www.ruiboyun.net/images/bg04.jpg) repeat-x top #f7f5f8; min-height:200px; height:auto!important; height:200px; padding-bottom:20px; padding-top:33px}
+.index-area dl{width:235px; float:left; margin: 0 10px 0 0 ;}
+.index-area dl dt{width:235px; background-position:-425px -294px; line-height:23px;height:113px;margin-bottom:10px}
+.index-area dl dt h2,.index-area dl dt a{font-size:16px;font-family:'Microsoft Yahei';color:#f08300;}
+.index-area dl dt img{ float:left; margin-right:6px;}
+.index-area dl dt h2{float:left;padding-top:20px;}
+.index-area dl dd{padding:5px; width:228px; float:left;}

@@ -1,0 +1,269 @@
+{% load staticfiles  %}
+{% load content_filter %}
+	<div class="maintop">
+    <div class="top">
+      <div class="top_right">
+        <ul>
+{#          <li id="language" class="language      "><a href="#" style="font-family:Calibri, Arial, '宋体';"></a>#}
+{#          <li id="language" class="language nav_narrow_down "><a href="#" style="font-family:Calibri, Arial, '宋体';">Select Language</a>#}
+{#          	<div style="position:relative; padding-top:5px; z-index:400; width:110px;*padding-top:0px;">#}
+{#            <div class="ul_select_lan liselected">#}
+{#              <ul>#}
+{#                <li><a href="../../zh/index.shtml" target="_self" style="font:12px/23px '宋体';">简体中文</a></li>#}
+{#                <li><a href="../../tc/index.shtml" target="_self" style="font:12px/23px '细明体';">繁体中文</a></li>#}
+{#                <li><a href="../../en/index.shtml" target="_self" style="font:12px/23px 'Calibri';">English</a></li>#}
+{#				<li><a href="../../jp/index.shtml" target="_self" style="font:12px/23px 'Calibri';">日本語</a></li>#}
+{#              </ul>#}
+{#            </div>#}
+{#            </div>#}
+{##}
+{#          </li>#}
+{#          <li class="hdlink"><a href="#">投资者</a></li>#}
+          <li  style="margin-left:200px"><a href="{% url 'topmenu' 123%}">加入我们</a></li>
+        </ul>
+      </div>
+      <!--top_right-->
+    </div>
+    <!--top-->
+  </div>
+  <!--maintop-->
+  <div id="header">
+    <div class="expo_logo"> <a href="{% url 'index' %}" target="_self"> <img src="{% static  'images/LOGO.jpg' %}" alt="万维合丰" title="万维合丰" /> </a> </div>
+    <!--expo_logo-->
+  </div>
+  <!--header-->
+  <div id="nav">
+    <div class="mainnav">
+      <ul>
+        <li><a  href="{% url 'topmenu' 1%}" name="#personalService">专业服务</a></li>
+        <li><a  href="{% url 'topmenu' 2%}" name="#outsourcingService">技术服务</a></li>
+		<li><a  href="{% url 'topmenu' 3%}" name="#emergingServices">新业务</a></li>
+{#        <li><a  href="../etc/index.shtml" name="#excellentTraining">卓越培训</a></li>#}
+        <li style="width:116px;"><a href="{% url 'topmenu' 4%}" name="#aboutIscc">关于万维合丰</a></li>
+      </ul>
+{#      <form action="#" method="post">#}
+{#        <input type="text" id="search" name="search" value="搜索" class="textbox"/>#}
+{#        <input name="提交" type="button" class="go" value=" " onclick="allSearch();" />#}
+{#      </form>#}
+    </div>
+    <!--mainnav-->
+  </div>
+  <div style="width:980px; margin:0px auto; padding:0px;">
+    <!-- 专业服务 -->
+    <div class="submenu" style="width: 630px;">
+		  <div id="personalService" class="submenubg">
+			<!-- left -->
+			<div id="divL1" style="float:left;width:180px; height:200px;">
+			  <div class="submenuStyle1" >
+				<h1><a href="{% url 'level_1' 16%}">咨询</a></h1>
+				<div class="box_1" style="border: none; width:120px;">
+				  <ul>
+					<li><a href="{% url 'level_2' 119%}">战略咨询</a></li>
+					<li><a href="{% url 'level_2' 120%}">业务咨询</a></li>
+					<li><a href="{% url 'level_2' 121%}">信息化规划咨询</a></li>
+				  </ul>
+				</div>
+			  </div>
+			</div>
+			<!-- middle -->
+			<div id="divM1" style=" float:left;width:150px; height:185px; background-color:#E0EEF9; margin-top:15px;"> <a href="#" style="display:block; padding:10px 20px;"><img src="{% static  'images/pingtai.png'%}" width="112" height="159"   alt="平台" title="平台"/></a> </div>
+			<!-- right -->
+			<div  id="divR1" style="float:left;width:130px; height:200px;">
+			  <div class="submenuStyle1">
+				<h1><a href="{% url 'level_1' 17%}">解决方案</a></h1>
+				<div class="box_1" style="border: none; width:82px;">
+				  <ul>
+					<li><a href="{% url 'level_2' 50%}">行业解决方案</a></li>
+
+
+				  </ul>
+				</div>
+			  </div>
+			  <div class="submenuStyle2">
+				<h1><a href="{% url 'level_1' 49%}">集成与服务</a></h1>
+				<div class="box_2" style="width:82px;border: none;">
+				  <ul>
+					<li><a href="{% url 'level_2' 101%}">系统集成</a></li>
+					<li><a href="{% url 'level_2' 102%}">系统维护</a></li>
+					<li><a href="{% url 'level_2' 103%}">系统运行</a></li>
+				  </ul>
+				</div>
+			  </div>
+			</div>
+		  </div>
+    </div>
+    <!--  外包服务  -->
+    <div class="submenu" style="width: 820px; ">
+      <div id="outsourcingService" class="submenubg">
+        <div id="divLW1" style="float:left;width:178px; height:228px; ">
+          <div class="submenuStyle1">
+            <h1><a href="{% url 'level_1' 104%}">人力资源外包</a></h1>
+            <div class="box_2"  style="width:138px;">
+              <ul>
+                <li><a href="{% url 'level_2' 108%}">专业人才派遣服务</a></li>
+
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="divMW1" style="float:left;width:172px; height:228px;">
+          <div class="submenuStyle1">
+            <h1><a href="{% url 'level_1' 106%}">IT外包服务</a></h1>
+            <div class="box_1" style="width:132px; border-left: 1px solid #dddddd;"> <img src="{% static  'images/mpic04.png' %}" alt="IT 外包服务" width="129" height="87"  />
+              <ul style="padding-top:10px;">
+                <li><a href="{% url 'level_2' 112%}">IT基础设施管理服务</a></li>
+                <li><a href="{% url 'level_2' 113%}">应用开发与测试服务</a></li>
+                <li><a href="{% url 'level_2' 114%}">遗留系统升级及移植服务</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="divRW1" style="float:left;width:148px; height:228px;">
+          <div class="submenuStyle1">
+            <h1><a href="{% url 'level_1' 105%}">产品工程服务</a></h1>
+            <div class="box_2" style="width:108px;">
+              <ul>
+                <li><a href="{% url 'level_2' 110%}">产品研发与测试服务</a></li>
+                <li><a href="{% url 'level_2' 111%}">产品部署与支持服务</a></li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="submenuStyle1"  >
+            <h1><a href="{% url 'level_1' 107%}">语言全球化服务</a></h1>
+            <div class="box_2" style="width:112px;">
+              <ul>
+                <li><a href="{% url 'level_2' 115%}">软件产品全球化服务</a></li>
+                <li><a href="{% url 'level_2' 116%}">多媒体内容翻译服务</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	<!-- 新业务 -->
+    <div class="submenu" style="width: 820px; margin-left: 150px;">
+    	<div id="emergingServices" class="submenubg">
+        	<div id="divLW1" style="float:left;width:178px; height:228px; ">
+            	<div class="submenuStyle1">
+                	<h1><a href="{% url 'level_1' 28%}">解决方案</a></h1>
+                    <div class="box_2" style="width:178px;">
+                    	<ul>
+                        	<li><a href="{% url 'level_2' 31%}">【K线学霸学习平台+App】</a></li>
+                        	<li><a href="{% url 'level_2' 32%}">【股海方舟游戏平台】 </a></li>
+                        	<li><a href="{% url 'level_2' 33%}">【财富征途游戏平台】 </a></li>
+                        	<li><a href="{% url 'level_2' 34%}">【仿真股市金融平台】</a></li>
+                        	<li><a href="{% url 'level_2' 35%}">【模拟炒股游戏平台】 </a></li>
+
+                      	</ul>
+                  	</div>
+              	</div>
+              	<div class="submenuStyle1">
+                  	<h1><a href="{% url 'level_1' 29%}">服务</a></h1>
+                  	<div class="box_2" style="width:135px;">
+                      	<ul>
+                          	<li><a href="{% url 'level_2' 36%}">互联网咨询服务</a></li>
+                          	<li><a href="{% url 'level_2' 37%}">互联网开发运维服务</a></li>
+                      	</ul>
+                  	</div>
+              	</div>
+          	</div>
+          	<div id="divMW1" style="float:left;width: 200px; height:228px;">
+              	<div class="submenuStyle1">
+                  	<h1><a href="{% url 'level_1' 30%}">典型案例</a></h1>
+                  	<div class="box_1" style="width:132px; border-left: 1px solid #dddddd; border-right: 0;">
+                      	<ul>
+                          	<li><a href="{% url 'level_2' 38%}">P2P网贷平台解决方案</a></li>
+                          	<li><a href="{% url 'level_2' 39%}">一站式股权众筹平台</a></li>
+                          	<li><a href="{% url 'level_2' 40%}">社交APP开发</a></li>
+                          	<li><a href="{% url 'level_2' 41%}">网站开发</a></li>
+                          	<li><img src="{% url 'level_2' 42%}" alt="" style="padding-top:5px;"/></li>
+                      	</ul>
+                  	</div>
+              	</div>
+          	</div>
+      	</div>
+    </div>
+    <!-- 卓越培训 -->
+{#    <div class="submenu" style="width: 660px; left:300px;  ">#}
+{#      <div id="excellentTraining" class="submenubg">#}
+{#        <div id="divLW1" style="float:left;width:168px; height:210px; ">#}
+{#          <div class="submenuStyle1">#}
+{#            <h1><a href="../etc/practical_training.shtml">大学生实训</a></h1>#}
+{#            <div class="box_1" style="width:110px;border:none;"> </div>#}
+{#          </div>#}
+{#          <div class="submenuStyle1">#}
+{#            <h1><a href="../etc/social_training.shtml">社会培训</a></h1>#}
+{#            <div class="box_2" style="width:110px;">#}
+{#              <ul>#}
+{#                <li><a href="../etc/social_training.shtml#page1">企业级&amp;行业级培训</a></li>#}
+{#                <li><a href="../etc/social_training.shtml#page2">国际认证培训及考试</a></li>#}
+{#                <li><a href="../etc/social_training.shtml#page3">公司内部培训</a></li>#}
+{#              </ul>#}
+{#            </div>#}
+{#          </div>#}
+{#          <div class="submenuStyle2" >#}
+{#            <h1  style="width:130px;"><a href="../etc/csi_university.shtml">万维合丰大学</a></h1>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div id="divRW1" style="float:left;width:243px; height:210px; ">#}
+{#          <div class="submenuStyle2">#}
+{#            <h1><a href="../etc/locations.shtml">全国布局</a></h1>#}
+{#            <div class="box_2" style="width:203px; border-left: 1px solid #dddddd;"> <a href="../etc/locations.shtml"><img src="{% static  'images/mpic01.png' %}" alt="全国布局" width="203" height="167" /></a> </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+    <!-- 关于万维合丰 -->
+    <div class="submenu" style="width:800px; left: 400px;float:left">
+      <div id="aboutIscc" class="submenubg">
+        <div class="submenuStyle1">
+          <div id="divLW1" style="float:left;width:105px; height:214px; ">
+            <h1><a href="{% url 'level_1' 19%}">公司概况</a></h1>
+            <div class="box_1" style="width:65px;border:none;">
+              <ul>
+                <li><a href="{% url 'level_2' 22%}">公司简介</a></li>
+                <li><a href="{% url 'level_2' 23%}">愿景和使命</a></li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+{#        <div id="divLW1" style="float:left;width:356px; height:194px; padding:10px 20px; background-color:#e0eef9;">#}
+{#        	<a href="#"><img src="{% static  'images/mpic02.png' %}" width="356" height="183" alt="关于万维合丰" /></a>#}
+{#        </div>#}
+
+        <div id="divLW1" style="float:left;width:200px; height:214px; ">
+           <div class="submenuStyle1">
+          <h1><a href="{% url 'level_1' 20%}"> 新闻中心</a></h1>
+          <div class="box_2" style="width:200px;">
+            <ul>
+              <li><a href="{% url 'level_2' 24%}">微信公众平台开放JS-SDK</a></li>
+              <li><a href="{% url 'level_2' 25%}">银行启用大数据防范电信诈骗</a></li>
+              <li><a href="{% url 'level_2' 26%}">国际认证机构首评中国网贷平台</a></li>
+
+
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="submenuStyle2">
+          <h1><a href="{% url 'level_2' 21%}">联系我们</a></h1>
+          <div class="box_2" style="width:200px;">
+            <ul>
+              <li><a href="{% url 'level_2' 27%}">联系方式</a></li>
+
+
+
+
+            </ul>
+          </div>
+        </div>
+        </div>
+
+
+     </div>
+    </div>
+  </div>

@@ -1,0 +1,103 @@
+{% load static %}
+      <div class="icss_2_0_PSG_leftbox">
+        <div class="icss_2_0_PSG_leftbox_right">
+          <div class="icss_2_2_S1home2_span1">{{ article.brief }}</div>
+        </div>
+      </div>
+{% for article_tuple in articles_tuple_list %}
+<div class="icss_2_0_PSG_leftbox">
+        <div class="icss_2_0_PSG_leftbox_right1">
+          <div class="icss_text_liebiao_S1home1">
+{#              <a href="{% url 'level_2' article_tuple.0.id  %}">#}
+                  {{ article_tuple.0.title }}
+{#              </a>#}
+          </div>
+          <div class="icss_text_span12">{{ article_tuple.0.brief }}</div>
+          <div class="icss_text_jiantou"><a href="{% url 'level_2' article_tuple.0.id  %} "><img height="22" width="20" src="{% static 'images/right_arrow.jpg' %}"></a></div>
+          <div class="icss_text_liebiao_S1home2_fenge"></div>
+        </div>
+        {% if article_tuple.1 %}
+        <div class="icss_2_0_PSG_leftbox_right1">
+          <div class="icss_text_liebiao_S1home1">
+{#              <a href="{% url 'level_2' article_tuple.1.id  %}">#}
+                  {{ article_tuple.1.title }}
+{#              </a>#}
+          </div>
+          <div class="icss_text_span12">{{ article_tuple.1.brief }}</div>
+          <div class="icss_text_jiantou"><a href="{% url 'level_2' article_tuple.1.id  %}"><img height="22" width="20" src="{% static 'images/right_arrow.jpg' %}"></a></div>
+          <div class="icss_text_liebiao_S1home2_fenge"></div>
+        </div>
+        {% endif %}
+
+</div>
+{% endfor %}
+
+
+
+{#<div class="icss_2_2_S1home2_box2">#}
+{#      <div class="icss_2_0_PSG_leftbox">#}
+{#        <div class="icss_2_0_PSG_leftbox_right">#}
+{#          <div class="icss_2_2_S1home2_span1">万维合丰行业解决方案涉及了制造流通、银行金融、政府、保险证券、移动应用、能源电力、公共事业7个行业。这些解决方案以咨询为先导，以行业为中心，以云计算、SOA和SaaS为商业技术架构，以监管为线索，以服务优先、为客户的成功而奋斗的理念，与客户建立了互利共赢的和谐商业环境。</div>#}
+{#        </div>#}
+{#      </div>#}
+{#      <div class="icss_2_0_PSG_leftbox">#}
+{#        <div class="icss_2_0_PSG_leftbox_right1">#}
+{#          <div class="icss_text_liebiao_S1home1"><a href="manufacture/manu_0.shtml">制造流通</a></div>#}
+{#          <div style="height:242px;" class="icss_text_span12">制造流通行业解决方案包括IT规划服务、物联网应用解决方案、制造企业生产执行系统（MES）、物流运作管理系统（LES）、产品生命周期管理系统（PLM）、企业设备管理系统、数据中心及决策支持解决方案（IDC）、企业管控体系建设解决方案、烟草商业营销管理系统、烟草专卖管理系统、烟草电子政务系统、行业管控应用系统、企业应用集成服务（EAI）、云计算与虚拟化解决方案、企业信息安全解决方案、IT运维管理与服务解决方案（ITSM）、行业性工程实施服务。</div>#}
+{#          <div class="icss_text_jiantou"><a href="manufacture/manu_0.shtml"><img height="22" width="20" src="../../../images/icss_2_0_PSG/2_0_PSG_jiantou.jpg"></a></div>#}
+{#          <div class="icss_text_liebiao_S1home2_fenge"></div>#}
+{#        </div>#}
+{#        <div class="icss_2_0_PSG_leftbox_right1">#}
+{#          <div class="icss_text_liebiao_S1home1"><a href="bankAndFinancial/baf_0.shtml">银行金融</a></div>#}
+{#          <div style="height:242px;" class="icss_text_span12">万维合丰在众多银行金融行业信息化建设经验的基础上，分析我国面临的问题，推出了银行金融行业解决方案，包括金融卡管理解决方案、金融支付清算解决方案、银行全网收单业务平台、金融授信融资业务及管理系统、金融业务风险控制、信用卡核心及外围管理系统、网上银行系统、金融营销解决方案、SOA应用套件解决方案、通用平台解决方案、国际报文管理平台。</div>#}
+{#          <div class="icss_text_jiantou"><a href="bankAndFinancial/baf_0.shtml"><img height="22" width="20" src="../../../images/icss_2_0_PSG/2_0_PSG_jiantou.jpg"></a></div>#}
+{#          <div class="icss_text_liebiao_S1home2_fenge"></div>#}
+{#        </div>#}
+{#      </div>#}
+{#      <div class="icss_2_0_PSG_leftbox">#}
+{#        <div class="icss_2_0_PSG_leftbox_right1">#}
+{#          <div class="icss_text_liebiao_S1home1"><a href="government/gov_0.shtml">政府</a></div>#}
+{#          <div style="height:142px;" class="icss_text_span12">政府行业解决方案主要包括政府通用解决方案、国家审计解决方案、内部审计解决方案、财政行业解决方案、药监行业解决方案、质监行业解决方案、国资委解决方案、中纪委解决方案、外汇管理解决方案、环保行业解决方案、气象行业解决方案、农业行业解决方案、民航行业解决方案。</div>#}
+{#          <div class="icss_text_jiantou"><a href="government/gov_0.shtml"><img height="22" width="20" src="../../../images/icss_2_0_PSG/2_0_PSG_jiantou.jpg"></a></div>#}
+{#          <div class="icss_text_liebiao_S1home2_fenge"></div>#}
+{#        </div>#}
+{#        <div class="icss_2_0_PSG_leftbox_right1">#}
+{#          <div class="icss_text_liebiao_S1home1"><a href="insuranceAndSecurities/ias_0.shtml">保险证券</a></div>#}
+{#          <div style="height:142px;" class="icss_text_span12">万维合丰面向保险证券的服务已经延伸至核心业务和高端业务，解决方案主要包括保险核心业务运营系统、保险渠道管理及营销支持系统、保险后台管理系统、保险商务智能系统（BI）、保险/证券内容及知识管理平台。</div>#}
+{#          <div class="icss_text_jiantou"><a href="insuranceAndSecurities/ias_0.shtml"><img height="22" width="20" src="../../../images/icss_2_0_PSG/2_0_PSG_jiantou.jpg"></a></div>#}
+{#          <div class="icss_text_liebiao_S1home2_fenge"></div>#}
+{#        </div>#}
+{##}
+{##}
+{#      </div>#}
+{##}
+{#      <div class="icss_2_0_PSG_leftbox">#}
+{#        <div class="icss_2_0_PSG_leftbox_right1">#}
+{#          <div class="icss_text_liebiao_S1home1"><a href="mobile-application/mapp_0.shtml">移动应用</a></div>#}
+{#          <div class="icss_text_span12">移动应用解决方案主要包括企业微博、企业IM系统、Mobile Connector系统、SNS社区系统、手机对讲系统、手机客户端平台开发及适配服务、移动互联网业务平台开发服务、移动互联网业务运营推广服务、移动商务短彩信推广服务。</div>#}
+{#          <div class="icss_text_jiantou"><a href="mobile-application/mapp_0.shtml"><img height="22" width="20" src="../../../images/icss_2_0_PSG/2_0_PSG_jiantou.jpg"></a></div>#}
+{#		  <div class="icss_text_liebiao_S1home2_fenge"></div>#}
+{#		</div>#}
+{#        <div class="icss_2_0_PSG_leftbox_right1">#}
+{#          <div class="icss_text_liebiao_S1home1"><a href="public-utilities/pub_0.shtml">公共事业</a></div>#}
+{#          <div class="icss_text_span12">公共事业解决方案包括：轨道交通业务管理系统、城市通卡业务管理系统、电子账单支付及呈现解决方案、第三方支付行业解决方案、社保卡业务管理系统定制服务、医疗卫生业务管理系统定制服务、公共事业商品溯源及城市交通智能分析类定制服务。</div>#}
+{#          <div class="icss_text_jiantou"><a href="public-utilities/pub_0.shtml"><img height="22" width="20" src="../../../images/icss_2_0_PSG/2_0_PSG_jiantou.jpg"></a></div>#}
+{#		  <div class="icss_text_liebiao_S1home2_fenge"></div>#}
+{#        </div>#}
+{#      </div>#}
+{#<!--2013-7-8 begin-->#}
+{#	  <div class="icss_2_0_PSG_leftbox">#}
+{#        <div class="icss_2_0_PSG_leftbox_right1">#}
+{#          <div class="icss_text_liebiao_S1home1"><a href="energy/ene_0.shtml">能源电力</a></div>#}
+{#          <div style="height:92px;" class="icss_text_span12">能源电力解决方案主要包括电力营销管理信息系统、95598智能互动网站解决方案、电力营销实时费控应用系统、电力营销GIS应用系统、电力营销稽查监控系统、电能服务管理平台、电网运营监测（控）信息支撑系统。</div>#}
+{#          <div class="icss_text_jiantou"><a href="energy/ene_0.shtml"><img height="22" width="20" src="../../../images/icss_2_0_PSG/2_0_PSG_jiantou.jpg"></a></div>#}
+{#        </div>#}
+{#        <div class="icss_2_0_PSG_leftbox_right1">#}
+{#          <div class="icss_text_liebiao_S1home1"> </div>#}
+{#          <div class="icss_text_span12"> </div>#}
+{#          <div class="icss_text_jiantou"></div>#}
+{#        </div>#}
+{#      </div>#}
+{#<!--2013-7-8 end-->#}
+{#    </div>#}
+

@@ -3,39 +3,102 @@
 <html>
   <head>
     <title>{% block title %}This is my new project home page{% endblock title %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'content/head.html' %}
     {% render_block "css" %}
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
   </head>
-  <body style="padding-top:60px">
+  <body >
     {% cms_toolbar %}
-        <div class="container">
-          <div class="navbar navbar-default" role="navigation">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Project name</a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                {% show_menu 0 1 100 100 "menu.html" %}
-              </ul>
-            </div>
-          </div>
-        {% block content %}
-        {% endblock content %}
-        </div>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        	<!--头部 start-->
+
+	<div class="head">
+		<div class="wrapper all_bg rel" >
+			<!--搜索 start-->
+			<!--搜索 end-->
+			<!--logo start-->
+			<h1><a href="/index.html" title="云视睿博"></a></h1>
+			<!--logo end-->
+			<!--Global start-->
+			<div  class="global white">  </div>
+			<!--Global end-->
+			<!--导航 start-->
+            {% include "content/menu_top.html" %}
+			<!--导航 end-->
+		</div>
+	</div>
+	<!--头部 end-->
+<div class="clear"></div>
+
+{% block banner %}
+{% endblock %}
+
+{% block index_area %}
+{% endblock  %}
+
+{% block content %}
+
+
+{% endblock  %}
+
+
+<!--footerHtml start-->
+{#<iframe id="footer" src="{% url 'footer' %}" width="100%" frameborder="0"  height="250px" border="0" scrolling="no"></iframe>#}
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock  %}
+
+
+
+<!--footerHtml end-->
+
+{#<div id="win"></div>#}
+{% include 'content/fotter_js.html' %}
+
+<script type="text/javascript">
+$(function(){
+	$('.banner .show ul li:eq(0)').show();
+	$(".hot .list div").jCarouselLite({btnNext: ".hot .list .next",btnPrev: ".hot .list .prev",auto:5000,speed:300,vertical:true,visible:1});
+	var speed = 10000,iNum = 0;
+	for(i=0;i<$('.banner .show ul li').length;i++){
+		if(i==0){$('.tab').append('<a href=\"#1\" class=\"on\">1</a>');}
+		else{$('.tab').append('<a href=\"#1\">'+(i+1)+'</a>');}
+		}
+	$('.banner .focus a').bind('click',function(){
+			var aIndex = $('.banner .focus a').index(this);
+			$('.on').removeClass('on');
+			$(this).addClass('on');
+			$('.banner .show ul li').fadeOut().eq(aIndex).fadeIn();
+			iNum = aIndex;
+			})
+	var autoPlay = function(){
+		iNum++;
+		if(iNum == $('.banner .show ul li').length){iNum=0;}
+		$('.on').removeClass('on');
+		$('.banner .focus  a').eq(iNum).addClass('on');
+		$('.banner .show ul li').fadeOut().eq(iNum).fadeIn(1000);
+		};
+	var timer = setInterval(autoPlay,speed);
+	$('.banner .show,.banner .focus').hover(function(){clearInterval(timer);},function(){timer = setInterval(autoPlay,speed);});
+  });//banner轮换效果
+	$(".banner .close-btn").bind("click",function(){
+		$(".news-show").animate({top:430})
+	});
+	$(".box_btn").bind("click",function(){
+		$(".news-show").animate({top:218});
+
+});
+</script>
+
+<!--[if lte IE 6]><script type="text/javascript" src="./images/PNG.js"></script><![endif]-->
+  <!-- InstanceEndEditable -->
+
+
+{#    <script src="http://code.jquery.com/jquery.js"></script>#}
+{#    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>#}
     {% render_block "js" %}
-  <footer>
-  {% static_placeholder 'footer' %}
-</footer>
+{#  <footer>#}
+{#  {% static_placeholder 'footer' %}#}
+{#</footer>#}
   </body>
 </html>
 

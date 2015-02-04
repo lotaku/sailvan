@@ -1,0 +1,20 @@
+{% extends "html/page.html" %}
+{% load content_filter %}
+
+
+
+{% block body %}
+
+    {% if article|has_subpage %}
+        {{ article|render_level2_body_with_subpage }}
+
+
+    {% else %}
+        {{ article|render_body}}
+
+    {% endif %}
+{% endblock  %}
+
+
+
+

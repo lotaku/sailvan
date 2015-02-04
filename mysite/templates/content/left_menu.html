@@ -1,0 +1,148 @@
+{% load staticfiles  %}
+{% load content_filter %}
+       {% for article in articles %}
+           <h3 {% if article.id == article_id %}
+                    class="mue  cur"
+                {% else %}
+                    class="mue"
+                {% endif %} >
+
+             <a href="{% url 'level_1' article.id %}">{{ article.title }}</a></h3>
+
+           {{ article| render_left_submenu }}
+
+
+       {% endfor %}
+{##--------------------------------------#}
+	<!-- 解决方案 开始 -->
+{#	<h3 class="mue"><a href="../../../solution/solve_project.shtml" phref="solve_project">解决方案</a></h3>#}
+{#	<ul class="menu">#}
+{#		<li class="iner"><a href="../../../solution/industry-solution/industry.shtml" phref="industry-solution">行业解决方案</a>#}
+{#			<ul class="menu_next"  style="width:200px;">#}
+{#				<li class="iner"><a href="../../../solution/industry-solution/manufacture/manu_0.shtml">制造流通</a>#}
+{#					<ul class="menu_next_sub" style="width:230px;">#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_1.shtml">IT规划服务</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_2.shtml">物联网应用解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_3.shtml">制造企业生产执行系统(MES)</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_4.shtml">物流运作管理系统（LES）</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_5.shtml">产品生命周期管理系统（PLM)</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_6.shtml">企业设备管理系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_7.shtml">数据中心及决策支持解决方案（IDC）</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_8.shtml">企业管控体系建设解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_9.shtml">烟草商业营销管理系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_10.shtml">烟草专卖管理系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_11.shtml">烟草电子政务系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_12.shtml">行业管控应用系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_13.shtml">企业应用集成服务（EAI）</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_14.shtml">云计算与虚拟化解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_15.shtml">企业信息安全解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_16.shtml">IT运维管理与服务解决方案（ITSM）</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/manufacture/manu_17.shtml">行业性工程实施服务</a></li>#}
+{#					</ul>#}
+{#				</li>#}
+{#				<li class="iner"><a href="../../../solution/industry-solution/bankAndFinancial/baf_0.shtml">银行金融</a>#}
+{#					<ul class="menu_next_sub" style="width:180px;">#}
+{#						<li><a href="../../../solution/industry-solution/bankAndFinancial/baf_1.shtml">金融卡管理解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/bankAndFinancial/baf_2.shtml">金融支付清算解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/bankAndFinancial/baf_3.shtml">银行全网收单业务平台</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/bankAndFinancial/baf_4.shtml">金融授信融资业务及管理系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/bankAndFinancial/baf_5.shtml">金融业务风险控制</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/bankAndFinancial/baf_6.shtml">信用卡核心及外围管理系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/bankAndFinancial/baf_7.shtml">网上银行系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/bankAndFinancial/baf_8.shtml">金融营销解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/bankAndFinancial/baf_9.shtml">SOA应用套件解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/bankAndFinancial/baf_10.shtml">通用平台解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/bankAndFinancial/baf_11.shtml">国际报文管理平台</a></li>#}
+{#					</ul>#}
+{#				</li>#}
+{#				<li class="iner"><a href="../../../solution/industry-solution/government/gov_0.shtml">政府</a>#}
+{#					<ul class="menu_next_sub" style="width:140px;">#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_1.shtml">政府通用解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_2.shtml">国家审计解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_3.shtml">内部审计解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_4.shtml">财政行业解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_5.shtml">药监行业解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_6.shtml">质监行业解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_7.shtml">国资委解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_8.shtml">中纪委解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_9.shtml">外汇管理解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_10.shtml">环保行业解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_11.shtml">气象行业解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_12.shtml">农业行业解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/government/gov_13.shtml">民航行业解决方案</a></li>#}
+{#					</ul>#}
+{#				</li>#}
+{#				<li class="iner"><a href="../../../solution/industry-solution/insuranceAndSecurities/ias_0.shtml">保险证券</a>#}
+{#					<ul class="menu_next_sub" style="width:200px;">#}
+{#						<li><a href="../../../solution/industry-solution/insuranceAndSecurities/ias_1.shtml">保险核心业务运营系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/insuranceAndSecurities/ias_2.shtml">保险渠道管理及营销支持系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/insuranceAndSecurities/ias_3.shtml">保险后台管理系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/insuranceAndSecurities/ias_4.shtml">保险商务智能系统（BI）</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/insuranceAndSecurities/ias_5.shtml">保险/证券内容及知识管理平台</a></li>#}
+{#					</ul>#}
+{#				</li>#}
+{#				<li class="iner"><a href="../../../solution/industry-solution/mobile-application/mapp_0.shtml">移动应用</a>#}
+{#					<ul class="menu_next_sub" style="width:200px;">#}
+{#						<li><a href="../../../solution/industry-solution/mobile-application/mapp_1.shtml">企业微博</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/mobile-application/mapp_2.shtml">企业IM系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/mobile-application/mapp_3.shtml">Mobile Connector系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/mobile-application/mapp_4.shtml">SNS社区系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/mobile-application/mapp_5.shtml">手机对讲系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/mobile-application/mapp_6.shtml">手机客户端平台开发及适配服务</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/mobile-application/mapp_7.shtml">移动互联网业务平台开发服务</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/mobile-application/mapp_8.shtml">移动互联网业务运营推广服务</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/mobile-application/mapp_9.shtml">移动商务短彩信推广服务</a></li>#}
+{#					</ul>#}
+{#				</li>#}
+{##}
+{#				<li class="iner"><a href="../../../solution/industry-solution/public-utilities/pub_0.shtml">公共事业</a>#}
+{#					<ul class="menu_next_sub" style="width:300px;">#}
+{#						<li><a href="../../../solution/industry-solution/public-utilities/pub_1.shtml">轨道交通业务管理系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/public-utilities/pub_2.shtml">城市通卡业务管理系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/public-utilities/pub_3.shtml">电子账单支付及呈现解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/public-utilities/pub_4.shtml">第三方支付行业解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/public-utilities/pub_5.shtml">社保卡业务管理系统定制服务</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/public-utilities/pub_6.shtml">医疗卫生业务管理系统定制服务</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/public-utilities/pub_7.shtml">公共事业商品溯源及城市交通智能分析类定制服务</a></li>#}
+{#					</ul>#}
+{#				</li>#}
+{##}
+{#<!--2013-7-8 begin-->#}
+{#				<li class="iner"><a href="../../../solution/industry-solution/energy/ene_0.shtml">能源电力</a>#}
+{#					<ul class="menu_next_sub" style="width:200px;">#}
+{#						<li><a href="../../../solution/industry-solution/energy/ene_1.shtml">电力营销管理信息系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/energy/ene_2.shtml">95598智能互动网站解决方案</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/energy/ene_3.shtml">电力营销实时费控应用系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/energy/ene_4.shtml">电力营销GIS应用系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/energy/ene_5.shtml">电力营销稽查监控系统</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/energy/ene_6.shtml">电能服务管理平台</a></li>#}
+{#						<li><a href="../../../solution/industry-solution/energy/ene_7.shtml">电网运营监测（控）信息支撑系统</a></li>#}
+{#					</ul>#}
+{#				</li>#}
+{#<!--2013-7-8 end-->#}
+{##}
+{##}
+{#			</ul>#}
+{#		</li>#}
+{#		<li class="iner"><a href="../../../solution/common-solution/common_0.shtml" phref="common-solution">通用解决方案</a>#}
+{#			<ul class="menu_next" style="width:220px;">#}
+{#				<li><a href="../../../solution/common-solution/common_1.shtml">企业核心应用</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_2.shtml">企业集团管控套件</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_3.shtml">开发和集成服务</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_4.shtml">企业微博</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_5.shtml">企业IM系统</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_6.shtml">第三方支付解决方案</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_7.shtml">数据中心及决策支持解决方案(IDC)</a></li>#}
+{##}
+{#				<li><a href="../../../solution/common-solution/common_9.shtml">行业管控应用系统</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_10.shtml">企业应用集成服务（EAI）</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_11.shtml">物联网应用解决方案</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_12.shtml">云计算与虚拟化解决方案</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_13.shtml">企业信息安全解决方案</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_14.shtml">IT运维管理与服务解决方案（ITSM）</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_15.shtml">行业性工程实施服务</a></li>#}
+{#				<li><a href="../../../solution/common-solution/common_16.shtml">企业资源计划（ERP）实施服务</a></li>#}
+{#			</ul>#}
+{#		</li>#}
+{#	</ul>#}
+	<!-- 解决方案 结束 -->

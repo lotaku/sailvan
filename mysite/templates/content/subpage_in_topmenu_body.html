@@ -1,0 +1,5 @@
+
+
+{% for article in articles %}
+<div class="icss_text_liebiao"> <a href="{% url 'get_content' article.id %}"><span style="font-family:Calibri, Arial, '宋体';">{{ article.title }}</a></div>
+{% endfor %}

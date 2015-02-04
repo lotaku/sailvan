@@ -17,8 +17,8 @@ class CMSPollPlugin(CMSPluginBase):
 
 plugin_pool.register_plugin(CMSPollPlugin)  # register the plugin
 
-class HelloPlugin(CMSPluginBase):
-    model = CMSPlugin
-    render_template = "hello_plugin.html"
-
-plugin_pool.register_plugin(HelloPlugin)
+# class HelloPlugin(CMSPluginBase):
+#     model = CMSPlugin
+#     render_template = "hello_plugin.html"
+#
+# plugin_pool.register_plugin(HelloPlugin)

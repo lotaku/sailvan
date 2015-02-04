@@ -1,0 +1,45 @@
+{% extends "html/page_topmenu.html" %}
+{% load content_filter  staticfiles %}
+
+{% block left_menu %}
+{% endblock %}
+{% block body %}
+   <div class="icss_2_0_PSG_box1">
+    {% for article in sub_articles %}
+      <div class="icss_2_0_PSG_leftbox">
+        <div class="icss_2_0_PSG_leftbox_image"><a href="{% url 'level_1' article.id %}"> <img src="
+
+{#        #}
+            {% if article.coverImg %}
+                {{ MEDIA_URL }}{{ article.coverImg }}
+        {% else %}
+                {%  static article.get_range_coverImg %}
+        {% endif %}
+        " width="258" height="172" /></a></div>
+        <div class="icss_2_0_PSG_leftbox_right">
+          <div class="icss_2_0_PSG_leftbox_right_top"><a href="{% url 'level_1' article.id %}">{{ article.title }}</a></div>
+          <div class="icss_text_span">
+              {{  article.brief }}</div>
+
+            {{ article | get_suppage_in_topmenu_body }}
+{#          <div class="icss_text_liebiao"> <a href="platform/r1.shtml"><span style="font-family:Calibri, Arial, '宋体';">ResourceOne</span>系列产品</a></div>#}
+{#          <div class="icss_text_liebiao"> <a href="platform/toplink.shtml"><span style="font-family:Calibri, Arial, '宋体';">TopLink/TSA+</span>系列产品</a></div>#}
+
+          <div class="icss_text_jiantou"><a href="{% url 'level_1' article.id %}"> <img src="{% static 'images/right_arrow.jpg' %}" width="20" height="22" /></a></div>
+        </div>
+      </div>
+   {% endfor %}
+
+  </div>
+
+{% endblock %}
+
+
+{# {% block body %}#}
+{#{{ article|render_body}}#}
+{#{% endblock body %}#}
+
+
+{#{% block rightbox %}#}
+{##}
+{#{% endblock %}#}

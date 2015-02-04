@@ -1,0 +1,26 @@
+{% extends "base_test.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+
+
+
+        {% block box1 %}
+
+         <div class="w53">
+             {% placeholder 'img_1' %}
+         </div>
+         <div class="w150">
+             {% placeholder 'box1' %}
+
+         </div>
+        {% endblock box1 %}
+
+
+{#{% cms_toolbar %}#}
+{#{% block content %}#}
+{#<div class="jumbotron">#}
+{#  {% placeholder "feature" %}#}
+{#</div>#}
+{#<div>#}
+{#  {% placeholder "content" %}#}
+{#</div>#}
+{#{% endblock content %}#}

@@ -1,11 +1,24 @@
 {% load staticfiles  %}
+{% load cms_tags %}
 {#<div class="jiaoxue" style="background-color: #ffffff;">#}
+{#12<br >#}
+{#{{ request.current_page.get_title_obj.title }}#}
+{#<br >#}
+{#234#}
 <div class="jiaoxue" style="background-color: {{ instance.background_color }};">
       <div class="spjx" >
         <div class="{% if instance.img_location == "lpic465" %}rtxt510{% else %}txt510{% endif %}">
           <h2 class="jx44" >
+{#              {{ instance.url }}#}
+{#            <a href="{% render_model instance 'url'|safe %}" title="{{ instance.title }}">{{ instance.title }}</a>#}
+{#            <a href="{{ instance.url }}" title="{{ instance.title }}">{{ instance.title }}</a>#}
+{#            <a href="{% show_editable_model instance "url" %}" title="{{ instance.title }}">{{ instance.title }}</a>#}
+{#              {% render_model instance "url:safe" %}#}
+{#              {% render_model instance "title" "title,"%}#}
             <a href="{{ instance.url }}" title="{{ instance.title }}">{{ instance.title }}</a>
+{#              <h1>{% render_model instance "some_attribute" "some_field,other_field" %}</h1>#}
           </h2>
+{#            {% render_model instance "body" "body,"%} #}
 		  <p >{{ instance.body|safe }}</p>
 		  <div class="w50 mt20" >
              <a href="{{ instance.url }}" title="{{ instance.title }}">更多 >></a>

@@ -196,6 +196,7 @@ CMS_TEMPLATES = (
     ('feature.html', 'Page with Feature'),
     ('footer_test.html', 'Page with footer'),
     ('index.html', 'Page with Index'),
+    ('common_post.html', 'Common Post'),
 )
 
 CMS_PERMISSION = True

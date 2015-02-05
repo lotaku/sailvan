@@ -1,6 +1,6 @@
 # encoding:utf-8
 from django.db import models
-
+from mysite.core.models import CObject
 from cms.models.pluginmodel import CMSPlugin
 from datetime import datetime
 from cms.models.fields import PlaceholderField
@@ -54,17 +54,40 @@ class IndexContentBoxPlugin3(CMSObject):
 	def __unicode__(self):
 		return self.title
 		# return 'box pluginxx'
+
+class IndexContentBox(CObject):
+	# index_content_box = models.ForeignKey(IndexContentBox)
+	my_placeholder = PlaceholderField(my_placeholder_slotname)
+
+	IMG_LOCATION_CHOICES = [('lpic465', '图片在左边'), ('pic465', '图片在右边')		]
+	BACKGROUND_COLOR_CHOICES = [(u'#ffffff', u'白色'), (u'#f7f5f8', u'灰色')		]
+	#
+	url = models.URLField(max_length=256, blank=True, null=True)
+	small_title = models.TextField(blank=True, null=True)
+	# style
+	img_location = models.CharField(max_length=256, choices=IMG_LOCATION_CHOICES, default=1)
+	background_color = models.CharField(max_length=256, choices=BACKGROUND_COLOR_CHOICES, default=1)
+
+	def __unicode__(self):
+		return self.title
+
+class PostBox(CObject):
+	# index_content_box = models.ForeignKey(IndexContentBox)
+
+
+	def __unicode__(self):
+		return self.title
 #
 # class IndexContentBoxPlugin(CMSPlugin, CMSObject):
 # 	# index_content_box = models.ForeignKey(IndexContentBox)
 # 	# my_placeholder = PlaceholderField(my_placeholder_slotname)
 #
-# 	BACKGROUND_COLOR_CHOICES = [(u'#ffffff', u'白色'), (u'#f7f5f8', u'灰色')		]
+	TEMPLATE_CHOICES = [(u'common_template', u'常规'), (u'list_04_template', u'列表4')		]
 #
 # 	url = models.URLField(max_length=256, blank=True, null=True)
 # 	small_title = models.TextField(blank=True, null=True)
 # 	# style
-# 	# img_location = models.CharField(max_length=256, choices=IMG_LOCATION_CHOICES, default=1)
+	template = models.CharField(max_length=256, choices=TEMPLATE_CHOICES, default=1)
 # 	background_color = models.CharField(max_length=256, choices=BACKGROUND_COLOR_CHOICES, default=1)
 #
 # 	def __unicode__(self):

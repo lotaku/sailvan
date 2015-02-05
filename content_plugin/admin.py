@@ -2,14 +2,16 @@ from django.contrib import admin
 from .models import IndexContentBoxPlugin3
 from .forms import  BoxForm
 # Register your models here.
+from cms.admin.placeholderadmin import FrontendEditableAdminMixin
 
 import cms
 from cms.admin.placeholderadmin import PlaceholderAdmin, FrontendEditableAdmin
 
 
-class IndexContentBoxPluginAdmin(FrontendEditableAdmin, PlaceholderAdmin):
+class IndexContentBoxPluginAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
 	list_display = ['title', ]
-	frontend_editable_fields = ('title',)
+	frontend_editable_fields = ('title', 'body')
+
 	# form = BoxForm
 	fieldsets = (
 		(None, {
@@ -25,23 +27,45 @@ class IndexContentBoxPluginAdmin(FrontendEditableAdmin, PlaceholderAdmin):
 		return fieldsets
 
 
-# class IndexContentBoxinInline(admin.StackedInline):
-# 	model = IndexContentBox
-# 	extra = 1
+admin.site.register(IndexContentBoxPlugin3, IndexContentBoxPluginAdmin)
 #
 #
-# class IndexContentBoxPluginAdmin(admin.ModelAdmin):
-# 	# inlines = [Widget]
-# 	model = IndexContentBoxPlugin
-# 	# raw_id_fields = ('parent',)
-# 	# search_fields = ['parent__title']
-# 	search_fields = ['id']
-# 	# inlines = [IndexContentBox]
+# class IndexContentBoxPluginAdmin(FrontendEditableAdmin, PlaceholderAdmin):
+# 	list_display = ['title', ]
+# 	frontend_editable_fields = ('title',)
+# 	# form = BoxForm
 # 	fieldsets = (
 # 		(None, {
-# 			'fields': ('url', 'order')
+# 			'fields': ('title', 'url', 'body', 'coverImg', 'small_title')
 # 		}),
 #
 # 	)
 #
-admin.site.register(IndexContentBoxPlugin3, IndexContentBoxPluginAdmin)
+# 	def get_fieldsets(self, request, obj=None):
+# 		fieldsets = [
+# 			(None, {'fields': ['url', 'order']}),
+# 		]
+# 		return fieldsets
+#
+#
+# # class IndexContentBoxinInline(admin.StackedInline):
+# # 	model = IndexContentBox
+# # 	extra = 1
+# #
+# #
+# # class IndexContentBoxPluginAdmin(admin.ModelAdmin):
+# # 	# inlines = [Widget]
+# # 	model = IndexContentBoxPlugin
+# # 	# raw_id_fields = ('parent',)
+# # 	# search_fields = ['parent__title']
+# # 	search_fields = ['id']
+# # 	# inlines = [IndexContentBox]
+# # 	fieldsets = (
+# # 		(None, {
+# # 			'fields': ('url', 'order')
+# # 		}),
+# #
+# # 	)
+# #
+# admin.site.register(IndexContentBoxPlugin3, IndexContentBoxPluginAdmin)
+#

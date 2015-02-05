@@ -74,7 +74,7 @@ class IndexContentBoxAdmin(admin.ModelAdmin):
 	)
 
 
-admin.site.register(IndexContentBox, IndexContentBoxAdmin)
+# admin.site.register(IndexContentBox, IndexContentBoxAdmin)
 
 
 

@@ -1,16 +1,16 @@
 {% load staticfiles  %}
 {#<div class="jiaoxue" style="background-color: #ffffff;">#}
-<div class="jiaoxue" style="background-color: {{ instance.index_content_box.background_color }};">
+<div class="jiaoxue" style="background-color: {{ instance.background_color }};">
       <div class="spjx" >
-        <div class="txt510">
+        <div class="{% if instance.img_location == "lpic465" %}rtxt510{% else %}txt510{% endif %}">
           <h2 class="jx44" >
-            <a href="{{ instance.index_content_box.url }}" title="{{ instance.index_content_box.title }}">{{ instance.index_content_box.title }}</a>
+            <a href="{{ instance.url }}" title="{{ instance.title }}">{{ instance.title }}</a>
           </h2>
-		  <p >{{ instance.index_content_box.body|safe }}</p>
+		  <p >{{ instance.body|safe }}</p>
 		  <div class="w50 mt20" >
-             <a href="{{ instance.index_content_box.url }}" title="{{ instance.index_content_box.title }}">更多 >></a>
+             <a href="{{ instance.url }}" title="{{ instance.title }}">更多 >></a>
           </div>
         </div>
-        <div  class="pic465" ><a href="{{ instance.index_content_box.url }}" title="{{ instance.index_content_box.title }}"><img src="{{ MEDIA_URL }}{{ instance.index_content_box.coverImg }}" /></a></div>
+        <div  class="{{ instance.img_location }}" ><a href="{{ instance.url }}" title="{{ instance.title }}"><img src="{{ MEDIA_URL }}{{ instance.coverImg }}" /></a></div>
       </div>
 </div>

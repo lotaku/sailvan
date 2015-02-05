@@ -6,6 +6,7 @@ import random
 import os
 # Create your models here.
 from mysite.settings import PROJECT_ROOT
+from content_plugin.models import IndexContentBoxPlugin3
 
 
 class CommonWidget(Object):
@@ -76,6 +77,8 @@ class IndexContentBox(Object):
 	# style
 	# img_location = models.CharField(max_length=256, choices=IMG_LOCATION_CHOICES, default=1)
 	background_color = models.CharField(max_length=256, choices=BACKGROUND_COLOR_CHOICES, default=1)
+
+
 
 	def __unicode__(self):
 		return self.title

@@ -148,9 +148,9 @@ a.more{font-family:simsun; color:#888888}
 
 /*选项卡*/
 .tabs_01{ width:100%; float:left;}
-.tabs_01 ul.tit{ position:relative; z-index:0;background:url(bg07.jpg) no-repeat left bottom; float:left; width:100%; height:30px;}
-.tabs_01 ul.tit li{line-height:30px; background:url(tab_line2.jpg) repeat-x top;font-family:'Microsoft Yahei'; float:left; font-size:14px; margin-right:10px;height:29px; position:relative; overflow:hidden; text-indent:0}
-.tabs_01 ul.tit li a.yellow{color:#ff7800; font-size:16px; font-weight:bold; background:url(ico05.png) no-repeat right center; padding-right:10px;}
+.tabs_01 ul.tit{ position:relative; z-index:0;background:url(/static/images/bg07.jpg) no-repeat left bottom; float:left; width:100%; height:30px;}
+.tabs_01 ul.tit li{line-height:30px; background:url(/static/images/tab_line2.jpg) repeat-x top;font-family:'Microsoft Yahei'; float:left; font-size:14px; margin-right:10px;height:29px; position:relative; overflow:hidden; text-indent:0}
+.tabs_01 ul.tit li a.yellow{color:#ff7800; font-size:16px; font-weight:bold; background:url(/static/images/ico05.png) no-repeat right center; padding-right:10px;}
 .tabs_01 ul.tit li.focus{height:30px ; z-index:1; background:url(tab_line.jpg) repeat-x top}
 .tabs_01 ul.tit li a{color:#555555}
 .tabs_hide{ display: none; }
@@ -238,8 +238,8 @@ ul.side_history li{width:200px; float:left; background:none; padding-top:0}
 .table_01 td.td{padding-left:15px;}
 .flash{float:left; position:relative; height:370px}
 .flash a.btn{background:url(btn10.jpg); display:block; width:142px; height:25px; text-indent:-9999em; right:0px; bottom:30px; position:absolute}
-.tabs_01 ul.tit li span.l{background:url(tab_left2.jpg) no-repeat left top; padding-left:25px; display:block; float:left;}
-.tabs_01 ul.tit li span.r{background:url(tab_right2.jpg) no-repeat right top; padding-right:25px; display:block; float:left;}
+.tabs_01 ul.tit li span.l{background:url(/static/images/tab_left2.jpg) no-repeat left top; padding-left:25px; display:block; float:left;}
+.tabs_01 ul.tit li span.r{background:url(/static/images/tab_right2.jpg) no-repeat right top; padding-right:25px; display:block; float:left;}
 
 .tabs_01 ul.tit li.focus span.l{background:url(tab_left.jpg) no-repeat left top;}
 .tabs_01 ul.tit li.focus span.r{background:url(tab_right.jpg) no-repeat right top;}

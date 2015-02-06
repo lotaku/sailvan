@@ -6,9 +6,21 @@ from datetime import datetime
 from cms.models.fields import PlaceholderField
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
+from cms.extensions import PageExtension
+from cms.extensions.extension_pool import extension_pool
+#扩展 page 的属性
+
+
+class TagExtension(PageExtension):
+	tag = models.CharField(max_length=256, blank=True, null=True)
+	info_banner = models.ImageField(upload_to='info_banner/%Y%m%d', blank=True, null=True)  # page的图片
+
+extension_pool.register(TagExtension)
+
 
 def my_placeholder_slotname(instance):
 	return 'boxes'
+
 
 class CMSObject(CMSPlugin):
 	"Generic wwhf object"
@@ -71,9 +83,9 @@ class IndexContentBox(CObject):
 	def __unicode__(self):
 		return self.title
 
+
 class PostBox(CObject):
 	# index_content_box = models.ForeignKey(IndexContentBox)
-
 
 	def __unicode__(self):
 		return self.title
@@ -82,17 +94,51 @@ class PostBox(CObject):
 # 	# index_content_box = models.ForeignKey(IndexContentBox)
 # 	# my_placeholder = PlaceholderField(my_placeholder_slotname)
 #
-	TEMPLATE_CHOICES = [(u'common_template', u'常规'), (u'list_04_template', u'列表4')		]
+	TEMPLATE_CHOICES = [(u'common_template', u'常规'), (u'list_04_template', u'列表4'), (u'tabs_01_template', u'显示某tag的文章')		]
 #
 # 	url = models.URLField(max_length=256, blank=True, null=True)
 # 	small_title = models.TextField(blank=True, null=True)
 # 	# style
 	template = models.CharField(max_length=256, choices=TEMPLATE_CHOICES, default=1)
 # 	background_color = models.CharField(max_length=256, choices=BACKGROUND_COLOR_CHOICES, default=1)
+
+
+class RightBox(CObject):
+	TEMPLATE_CHOICES = [(u'right_box_common', u'常规')	]
+	template = models.CharField(max_length=256, choices=TEMPLATE_CHOICES, default=1)
+
+	def __unicode__(self):
+		return self.title
+
+
+class IndexShowBox(CObject):
+	TEMPLATE_CHOICES = [(u'index_show_box_common', u'常规')	]
+	template = models.CharField(max_length=256, choices=TEMPLATE_CHOICES, default=1)
+	title_url = models.URLField(max_length=256, blank=True, null=True)
+	body_url = models.URLField(max_length=256, blank=True, null=True)
+	# style
+	css_top = models.CharField(max_length=256, blank=True, null=True)
+	css_left = models.CharField(max_length=256, blank=True, null=True)
+
+	def __unicode__(self):
+		return self.title
+
+
+class Menu_1(CObject):
+	TEMPLATE_CHOICES = [(u'menu_1', u'常规')	]
+	template = models.CharField(max_length=256, choices=TEMPLATE_CHOICES, default=1)
+	title_url = models.URLField(max_length=256, blank=True, null=True)
+	body_url = models.URLField(max_length=256, blank=True, null=True)
+	# style
+
+	def __unicode__(self):
+		return self.title
+
+
+#以下是测试的
 #
 # 	def __unicode__(self):
 # 		return self.small_title
-
 	# def copy_relations(self, oldinstance):
 		# for associated_item in oldinstance.index_content_box2.all():
 		# 	# instance.pk = None; instance.pk.save() is the slightly odd but
@@ -100,15 +146,11 @@ class PostBox(CObject):
 		# 	associated_item.pk = None
 		# 	associated_item.plugin = self
 		# 	associated_item.save()
-
 # #
 # class AssociatedItem(models.Model):
 # 	index_content_box2 = models.ForeignKey(
 # 		IndexContentBoxPlugin,
 # 		related_name="index_content_box2")
-
-
-
 #
 # class MyModel(models.Model):
 #     # your fields

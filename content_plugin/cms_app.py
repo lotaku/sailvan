@@ -5,6 +5,6 @@ from django.utils.translation import ugettext_lazy as _
 
 class IndexContentBoxApp(CMSApp):
     name = _("IndexContentBox App")  # give your app a name, this is required
-    urls = ["content.urls"]  # link your app to url configuration(s)
+    urls = ["mysite.content.urls"]  # link your app to url configuration(s)
 
 apphook_pool.register(IndexContentBoxApp)  # register your app

@@ -1,14 +1,16 @@
 {% load staticfiles %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
 <div class="banner">
 	<!--banner图片 start-->
 	<div class="show">
 		<ul>
+                {% placeholder  "Show Boxes" %}
+{#            {% for case in index_show_case %}#}
+{#            			<li> <a href="{{ case.title_url }}" ><img src="{{ MEDIA_URL }}{{ case.coverImg }}"/></a>#}
+{#					<span style="position: absolute;top: {{ case.css_top }}px;left: {{ case.css_left }}px;font-size: 18px; text-align:left;line-height:29px;color:#133a58;font-family: 'Microsoft Yahei';">{{ case.body|safe }}</span>#}
+{#			</li>#}
+{#            {% endfor %}#}
 
-            {% for case in index_show_case %}
-            			<li> <a href="{{ case.title_url }}" ><img src="{{ MEDIA_URL }}{{ case.coverImg }}"/></a>
-					<span style="position: absolute;top: {{ case.css_top }}px;left: {{ case.css_left }}px;font-size: 18px; text-align:left;line-height:29px;color:#133a58;font-family: 'Microsoft Yahei';">{{ case.body|safe }}</span>
-			</li>
-            {% endfor %}
 {#			<li> <a href="./products/media_server/product_detail/media_server.html" ><img src="http://www.ruiboyun.net/./banner/big/201301/media_server.jpg"/></a>#}
 {#					<span style="position: absolute;top: 213px;left: 960px;font-size: 18px; text-align:left;line-height:29px;color:#133a58;font-family: 'Microsoft Yahei';">在普通双核CPU设备上实现5000+并发播出的流媒体服务器,<br />支持RTMP、RTSP、HLS等协议播出，面向Windows、iOS<br />Android等终端提供稳定流畅的视频直播、时移、点播服务。 </span>#}
 {#			</li>#}

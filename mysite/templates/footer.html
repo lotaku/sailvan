@@ -1,55 +1,19 @@
 {% load cms_tags staticfiles sekizai_tags menu_tags %}
  <div class="footer">
      <div class="bottom">
-
-       <div class="fleft">
-         {% block box1 %}
-
-         <div class="w53">
-             {% static_placeholder 'img_1' %}
-         </div>
-         <div class="w150">
-             {% static_placeholder 'box1' %}
-
-         </div>
-        {% endblock %}
-
-
-       </div>
-
-           <span class="w1"><img src="http://www.ruiboyun.com/images/modi/footerst.png" /></span>
-
-       <div class="fcenter">
-                  <div class="w40"><img src="http://www.ruiboyun.com/images/modi/phone.png" /></div>
-         <div class="w160">
-           <h3>联系电话</h3>
-           <p>
-           客服电话：400-088-9255
-<br />          固      话：+86-10-82895303
-<br />传      真：+86-10-82895303
-<br />电子邮件：service@novel-tv.com
-     <br /> Q Q：2539783387</p>
-         </div>
-       </div>
-
-           <span class="w1"><img src="http://www.ruiboyun.com/images/modi/footerst.png" /></span>
-
        <div class="fright">
-                         <div class="w40"><img src="http://www.ruiboyun.com/images/modi/yun.png" />
-<img src="http://www.ruiboyun.com/images/modi/anq.png" />
-                         </div>
-
-         <div class="w160">
-           <h3>网站信息</h3>
-           <p>
-          Copyright©2014 Beijing Novel-TV Meida Tech. Co.,Ltd.
-
-<br />All Rights Reserved
-<br />云视睿博 版权所有
-<br /><br />京ICP备14034410号
-</p>
-         </div>
-
+         <div class="w40"> {% static_placeholder 'footer_img_1' %}</div>
+         <div class="w160">{% static_placeholder 'footer_box_1' %}</div>
+       </div>
+            <span class="w1"><img src="http://www.ruiboyun.com/images/modi/footerst.png" /></span>
+       <div class="fcenter">
+         <div class="w40"> {% static_placeholder 'footer_img_2' %}</div>
+         <div class="w160">{% static_placeholder 'footer_box_2' %}</div>
+       </div>
+           <span class="w1"><img src="http://www.ruiboyun.com/images/modi/footerst.png" /></span>
+       <div class="fright">
+         <div class="w40"> {% static_placeholder 'footer_img_3' %}</div>
+         <div class="w160">{% static_placeholder 'footer_box_3' %}</div>
        </div>
 	 </div>
   </div>

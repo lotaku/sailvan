@@ -18,7 +18,7 @@ a img {	border:none;}
 h2 a,h2{/*color:#585858;*/color:#009bda;font-family:'Microsoft Yahei';}
 h2 a:hover{color:#ff7800}
 
-.center{width:100%; height:1520px;}
+.center{width:100%; height:auto;}
 .shipin , .zhibo {height:320px; padding:22px 0 22px 0; margin:0 auto}
 .jiaoxue , .dianshi{height:320px; background-color:#f7f5f8; padding:22px 0 22px 0;margin:0 auto}
 
@@ -52,17 +52,17 @@ h2 a:hover{color:#ff7800}
 
 
 /*底部*/
-.footer{ width:100%; background-image:url(http://www.ruiboyun.com/images/modi/footerbj.jpg);height:253px;}
+.footer{ width:100%; background-image:url(http://www.ruiboyun.com/images/modi/footerbj.jpg);height:253px;margin-bottom: 0;}
 .bottom{width:1010px; height:235px; margin:0 auto;}
-.fleft , .fcenter , .fright{width:330px; height:250px; float:left; margin-top:20px;}
+.fleft , .fcenter , .fright{width:330px; height:auto ; float:left; margin-top:20px;}
 .w53{width:70px; float:left; padding-left:10px}
 .w150{width:180px; color:#FFF; float:left; margin-right:8px;}
 .w150 h3{line-height:20px;}
 
-.w40{width:50px; float:left; padding-left:30px;}
-.w40 img{display:block; padding-bottom:70px;}
+.w40{width:50px; float:left; padding-left:25px;}
+.w40 img{display:block; padding-bottom:65px;}
 
-.w160{width:180px; color:#FFF; float:left;margin-right:8px;}
+.w160{width:180px; color:#FFF; float:left;margin-left:8px;margin-bottom:20px;}
 .w1{float:left; padding-top:4px;}
 
 .wleft , .wcenter , .wright{width:320px; height:235px; float:left; margin:0 auto}

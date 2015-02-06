@@ -1,0 +1,6 @@
+{% load staticfiles  %}
+{% load cms_tags %}
+<li>
+    <a href="{{ instance.title_url }}" ><img src="{{ MEDIA_URL }}{{ instance.coverImg }}"/></a>
+    <span style="position: absolute;top: {{ instance.css_top }}px;left: {{ instance.css_left }}px;font-size: 18px; text-align:left;line-height:29px;color:#133a58;font-family: 'Microsoft Yahei';">{{ instance.body|safe }}</span>
+</li>

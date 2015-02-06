@@ -1,11 +1,28 @@
+# -*- coding: UTF-8 –*-
 from django.contrib import admin
-from .models import IndexContentBoxPlugin3
+from .models import IndexContentBoxPlugin3, TagExtension
 from .forms import  BoxForm
 # Register your models here.
 from cms.admin.placeholderadmin import FrontendEditableAdminMixin
 
+from django.contrib import admin
+from cms.extensions import PageExtensionAdmin
 import cms
 from cms.admin.placeholderadmin import PlaceholderAdmin, FrontendEditableAdmin
+
+# 添加 page 的扩展属性到 admin 后台管理
+
+
+from .models import TagExtension
+
+
+class TagExtensionAdmin(PageExtensionAdmin):
+	list_display = ['tag', ]
+
+	def __unicode__(self):
+		return u'Tag'
+
+admin.site.register(TagExtension, TagExtensionAdmin)
 
 
 class IndexContentBoxPluginAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):

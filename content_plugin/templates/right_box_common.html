@@ -1,0 +1,14 @@
+{% load staticfiles  %}
+{% load cms_tags  boxes %}
+
+<div class="Right_box">
+    <div class="sub_news">
+        <h2 class="tit all_bg"><em class="all_bg">{{ instance.title }}</em></h2>
+        <ul>
+            <img src="{{ MEDIA_URL }}{{ instance.coverImg }}">
+            {{ instance|rightbox|safe }}
+
+{#            <li> <a title="America Global Data Link" href="../../../cases/data_link/data_link.html">America Global Data Link</a> </li>#}
+        </ul>
+    </div>
+</div>

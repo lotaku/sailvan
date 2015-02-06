@@ -4,7 +4,7 @@ from django.template import RequestContext
 from django.db.models import Q, Count
 from mysite.content.models import Article, IndexShowcase, CommonWidget, IndexContentBox, FooterBox
 # Create your views here.
-from mysite.spider import Wwhf
+
 from mysite.content.forms import UrlForm
 import sys
 
@@ -102,72 +102,3 @@ def footer(request):
 
 	return render_to_response('content/footer.html', context,
 							  context_instance=RequestContext(request))
-
-def grab_articles(request):
-	# 先运行spider.py 抓取连接，填入 urls.txt 或 手动保存。
-
-	if request.method == "GET":
-		form = UrlForm()
-
-		context = {'form': form,
-		}
-		return render_to_response('html/grab_articles.html', context,
-								  context_instance=RequestContext(request))
-	if request.method == "POST":
-		form = UrlForm(request.POST, files=request.FILES)
-		if form.is_valid():
-			type_first = form.cleaned_data['type_first']
-			menu_level = form.cleaned_data['menu_level']
-			common_widget_id = form.cleaned_data['common_widget_id']
-			parent_id = form.cleaned_data['parent_id']
-			urls = form.cleaned_data['urls']
-			urls = urls.split('\r\n')
-			urls.reverse()
-			for url in urls:
-				# print url
-				# with open('/home/l/workspace/wwhf/wwhf/content/urls.txt','r') as f:
-				# 	for line in f.readlines():
-				spider = Wwhf()
-				# url = 'http://www.chinasofti.com/superWebCMS/pages/sites/MainSite/html/zh/psg/solution/industry-solution/bankAndFinancial/baf_0.shtml'
-				url = url.strip()
-				if not "http" in url:
-					continue
-				spider.grab(url=url)
-
-				new_article = Article()
-				new_article.title = spider.title
-				new_article.brief = spider.brief
-				new_article.body = spider.body
-				new_article.save()
-				new_article.common_widget.add(CommonWidget.objects.get(pk=common_widget_id))
-				new_article.type_first = type_first
-				new_article.menu_level = menu_level
-				new_article.parent = Article.objects.get(id=parent_id)
-				new_article.save()
-			return HttpResponse('处理完成..')
-
-	return HttpResponse('not.....')
-
-
-def replace_something(request):
-	import re
-
-	articles = Article.objects.all()
-	for article in articles:
-		body = article.body
-		body = re.sub(u'中软国际', u'万维合丰', body)
-		article.body = body
-
-		title = article.title
-		title = re.sub(u'中软国际', u'万维合丰', title)
-		article.title = title
-
-		brief = article.brief
-		brief = re.sub(u'中软国际', u'万维合丰', brief)
-		article.brief = brief
-
-		article.save()
-
-	return HttpResponse('OK..')
-
-

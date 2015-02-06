@@ -1,0 +1,22 @@
+{% load staticfiles  %}
+{% load cms_tags  boxes  %}
+
+<div class="tabs_01 Tabs mt20">
+    <ul class="tit">
+        <li><span class="l"><span class="r"><a href="#TabsBox1" class="yellow">{{ instance.title }}</a></span></span></li>
+    </ul>
+    <div id="TabsBox1"> <img src="{{ MEDIA_URL }}{{ instance.coverImg }}" class="fl mr15 mt20"/>
+        <ul class="list_11">
+            {{ instance|tabs_01|safe }}
+{#            <li> <a href="../../../products/encode_vedio/product_detail/live_encoder_pc.html" title="NTV Live Encoder for PC">NTV Live Encoder for PC</a> </li>#}
+{#            <li> <a href="../../../products/encode_vedio/product_detail/live_encoder_android.html" title="NTV Live Encoder for Android">NTV Live Encoder for Android</a> </li>#}
+{#            <li> <a href="../../../products/encode_vedio/product_detail/live_encoder_iphone.html" title="NTV Live Encoder for iPhone">NTV Live Encoder for iPhone</a> </li>#}
+{#            <li> <a href="../../../products/media_server/product_detail/media_server.html" title="NTV Media Server G3流媒体服务器">NTV Media Server G3流媒体服务器</a> </li>#}
+{#            <li> <a href="../../../products/media_server/product_detail/transcode_server.html" title="NTV Transcode Server转码服务器">NTV Transcode Server转码服务器</a> </li>#}
+{#            <li> <a href="../../../products/media_server/product_detail/live_online.html" title="Live On Line直播管理平台">Live On Line直播管理平台</a> </li>#}
+{#            <li> <a href="../../../products/other_products/product_detail/hls_encrypt.html" title="HLS加密系统">HLS加密系统</a> </li>#}
+{#            <li> <a href="../../../products/other_products/product_detail/hls_slice.html" title="HLS切片">HLS切片</a> </li>#}
+{#            <li> <a href="../../../products/other_products/product_detail/tv_router.html" title="数字电视网关">数字电视网关</a> </li>#}
+        </ul>
+    </div>
+</div>

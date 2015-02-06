@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% load cms_tags staticfiles sekizai_tags menu_tags %}
+{% load cms_tags staticfiles sekizai_tags menu_tags boxes%}
 {% block banner %}
     <!--banner start-->
         <div class="info_banner">
             <div id="logo" class="rel wrapper">
-            <img src="{% static 'images/solution.jpg' %}">
+            <img src="{{ MEDIA_URL }}{{ request.current_page.tagextension.info_banner}}">
             </div>
         </div>
 <!--banner end-->
@@ -17,114 +17,20 @@
 <!--main start-->
 <div class="main wrapper">
 {#{% page_attribute "page_title" 13 as title %}#}
-	<div class="current"><a href="./../../../index.html">首页</a>&nbsp;&raquo;&nbsp;解决方案&nbsp;&raquo;&nbsp;远程教学</div>
+{#	<div class="current"><a href="./../../../index.html">首页</a>&nbsp;&raquo;&nbsp;解决方案&nbsp;&raquo;&nbsp;远程教学</div>#}
+	<div class="current">{{ request.current_page|small_menu|safe }}</div>
 	<div class="Left_box">
 		<div class="Box3 min_height"> <img src="{% static 'images/round_top.jpg' %}" class="fl"/>
 			<div class="package">
 				<div class="pro_three">
-
                     {% placeholder  "Post Boxes" %}
 
-{#					<div class="bewrite info_intro">#}
-{#						<h2 class="f18">互联网教学</h2>#}
-{#						<div class="pt20">作为学校或社会培训机构的负责人，您是否正在为教室不够大、场地费用太高、课时安排不够灵活、或者大部分参与者不能亲临现场而担忧？在科技发展日新月异的今天，这种情况正在被改变，“睿博远程教学系统”让您突破空间、时间和距离的限制，将您的教学活动通过开放互联网随时随刻传递给任何地点的参与者。#}
-{#						<br/><br/>#}
-{#						<img src="201308/remote1.png"/>#}
-{#						<br /><br/>#}
-{#						该系统是专门为教育机构开展高质量的远程教学活动开发的新型远程教学系统，系统以高清视频影像为传送主题，集PPT、电脑屏幕、手写稿、黑板板书的传输于一体，不仅保留了传统教学活动的形式和效果，更是利用新技术大大增强了教学活动的灵活性、趣味性和传播范围。老师可以在教学活动过程中切换现场视频、PPT、手稿、黑板板书和电脑屏幕内容作为远程展示内容，使教学活动灵活多样、趣味无穷。#}
-{#						<br/><br/>#}
-{#						整个远程教学活动的过程会被同步录制保留，形成有价值的教学课件，学员可以在任何时候通过互联网点播以往的教学内容，并可以选择收看部分知识点的视频片段，这种方式改变了以往只能通过翻看笔记回想老师授课内容的方式，老师珍贵的教学影像被保存和重复使用，大大提高了教学效果。#}
-{#						<br/><br/>#}
-{#						高质量的视频编码能力和稳定的播出服务能力能够确保用户获得清晰流畅的播放体验，您也可以根据收看者的网络和终端情况手动配置合适的编码码率和画幅，确保用户在较差的网络带宽条件下也同样能够获得较为理想的播放效果。#}
-{#						<br/><br/>#}
-{#						系统提供严密的认证授权技术确保教学活动只有经过授权的学员才能观看。您既可以选择让所有用户参与听课，也可以选择让少数授权用户参与听课，专业严格的安全认证体系确保任何非授权用户都无法绕过认证。#}
-{#						<br/><br/>#}
-{#						<img style="margin-bottom:15px" src="201308/remote2.png"/>#}
-{#						</div>#}
-{#						<div class="bor"></div>#}
-{#					</div>#}
-					<div class="bewrite info_intro">
-						<h3 class="f18">产品特点</h3>
-						<ul class="list_04" style="margin-bottom:15px;">
-							<li><b>现场教学活动实时直播</b></li>
-							<p style="margin-left:10px">现场视频、PPT讲稿、PC桌面、手写稿、黑板板书、图片、视频文件实时直播，使用高清摄像设备对老师的授课过程进行采集编码，保障视频影像的最佳质量。</p>
-							<li><b>采集软件功能强大、易于操作</b></li>
-							<p style="margin-left:10px">功能强大、易于操作的教学采集软件，是一个远程教学的操作平台，为老师提供直观的视频画幅和编码质量配置、镜头角度和聚焦调整、音量调节和静音、麦克设置、开场欢迎画面和中场休息画面插入、PPT插入、手稿插入、屏幕分享等功能。</p>
-							<li><b>多机位直播</b></li>
-							<p style="margin-left:10px">支持在一场教学活动中多个机位同步直播，一个机位上支持多个摄像设备无停顿的直播画面切换。</p>
-							<li><b>稳定的播出服务</b></li>
-							<p style="margin-left:10px">自主研发的媒体服务器系统，提供7*24稳定播出服务，一台服务器可以为每场教学活动提供超过1000个收看终端的支撑。</p>
-							<li><b>灵活的管理平台</b></li>
-							<p style="margin-left:10px">功能强大的、易用的直播服务管理平台，企业可以通过该平台制定和审核教学计划，监控教学活动，邀请和授权观看用户，管理历史课件。</p>
-							<li><b>播放认证和授权</b></li>
-							<p style="margin-left:10px">由媒体服务器和管理平台联合对访客身份进行认证，只有经过授权的用户才可以观看直播内容，确保任何个人或窃取工具无法绕过身份认证。</p>
-							<li><b>点播和回看</b></li>
-							<p style="margin-left:10px">教学视频在服务器上实时归档，课程结束后即可提供视频点播服务。提供视频文件的信息查询、移动、下载等管理功能。</p>
-						</ul>
-						<div class="bor"></div>
-					</div>
-					<div class="bewrite info_intro">
-						<h3 class="f18">系统组成</h3>
-						<div class="pt20">系统包括现场教学采编系统、摄像机、多媒体服务器、管理服务器等几个部分：
-							<table border="1" width="100%" style="margin-top:10px">
-								<thead>
-									<th>模块</th>
-									<th>版本/规格</th>
-								</thead>
-								<tbody>
-									<tr>
-										<td>现场教学采集系统</td>
-										<td>NTV Live Encoder for PC 2.0 教学高清版</td>
-									</tr>
-									<tr>
-										<td>摄像机</td>
-										<td>要求具备USB、HDMI或SDI输出接口的摄像机</td>
-									</tr>
-									<tr>
-										<td>媒体服务器</td>
-										<td>NTV Media Server G3 标准版</td>
-									</tr>
-									<tr>
-										<td>管理服务器</td>
-										<td>NTV Live On Line OSS 2.0</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div class="tabs_01 Tabs mt20">
-						<ul class="tit">
-							<li><span class="l"><span class="r"><a href="#TabsBox1" class="yellow">相关产品</a></span></span></li>
-						</ul>
-						<div id="TabsBox1"> <img src="../../../images/img12.jpg" class="fl mr15 mt20"/>
-							<ul class="list_11">
-								<li> <a href="../../../products/encode_vedio/product_detail/live_encoder_pc.html" title="NTV Live Encoder for PC">NTV Live Encoder for PC</a> </li>
-								<li> <a href="../../../products/encode_vedio/product_detail/live_encoder_android.html" title="NTV Live Encoder for Android">NTV Live Encoder for Android</a> </li>
-								<li> <a href="../../../products/encode_vedio/product_detail/live_encoder_iphone.html" title="NTV Live Encoder for iPhone">NTV Live Encoder for iPhone</a> </li>
-								<li> <a href="../../../products/media_server/product_detail/media_server.html" title="NTV Media Server G3流媒体服务器">NTV Media Server G3流媒体服务器</a> </li>
-								<li> <a href="../../../products/media_server/product_detail/transcode_server.html" title="NTV Transcode Server转码服务器">NTV Transcode Server转码服务器</a> </li>
-								<li> <a href="../../../products/media_server/product_detail/live_online.html" title="Live On Line直播管理平台">Live On Line直播管理平台</a> </li>
-								<li> <a href="../../../products/other_products/product_detail/hls_encrypt.html" title="HLS加密系统">HLS加密系统</a> </li>
-								<li> <a href="../../../products/other_products/product_detail/hls_slice.html" title="HLS切片">HLS切片</a> </li>
-								<li> <a href="../../../products/other_products/product_detail/tv_router.html" title="数字电视网关">数字电视网关</a> </li>
-							</ul>
-						</div>
-					</div>
 				</div>
 			</div>
 			<img src="{% static "images/round_bottom.jpg" %}" class="fl"/> </div>
 	</div>
+     {% placeholder  "Right Boxes" %}
 
-	<div class="Right_box">
-		<div class="sub_news">
-			<h2 class="tit all_bg"><em class="all_bg">商用案例</em></h2>
-			<ul>
-				<img src="../../../images/products.jpg"/>
-				<li> <a href="../../../cases/aopeng/aopeng.html" title="奥鹏远程教育">奥鹏远程教育</a> </li>
-				<li> <a href="../../../cases/data_link/data_link.html" title="America Global Data Link">America Global Data Link</a> </li>
-			</ul>
-		</div>
-	</div>
 
 	<div class="clear"></div>
 </div>

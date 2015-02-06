@@ -72,6 +72,7 @@ class CObject(CMSPlugin):
 	menu_level = models.IntegerField(max_length=256, default=1, null=True)
 	coverImg = models.ImageField(upload_to='coverImg/%Y%m%d', blank=True, null=True)
 	order = models.IntegerField(max_length=256, null=True, blank=True)
+	tag = models.CharField(max_length=256, blank=True, null=True)
 
 
 

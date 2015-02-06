@@ -1,6 +1,6 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-from content_plugin.models import PostBox, IndexContentBox, RightBox, IndexShowBox
+from content_plugin.models import PostBox, IndexContentBox, RightBox, IndexShowBox, Menu_1
 from django.utils.translation import ugettext as _
 import copy
 
@@ -124,13 +124,13 @@ class CMSIndexShowBoxPlugin(CMSPluginBase):
 plugin_pool.register_plugin(CMSIndexShowBoxPlugin)  # register the plugin
 
 
-class CMSIndexShowBoxPlugin(CMSPluginBase):
-	model = IndexShowBox
+class CMSMenu_1_Plugin(CMSPluginBase):
+	model = Menu_1
 	module = _("Menu")
-	name = _("IndexShowBox")
+	name = _("Menu_1")
 	_fieldsets = [
 		(None, {
-			'fields': ['title', 'title_url', 'body', 'body_url', 'template', 'css_top', 'css_left', 'coverImg']
+			'fields': ['template', 'reverse_id']
 		})]
 
 	def get_fieldsets(self, request, obj=None):
@@ -143,7 +143,7 @@ class CMSIndexShowBoxPlugin(CMSPluginBase):
 		return context
 
 	def get_render_template(self, context, instance, placeholder):
-		if instance.template == 'index_show_box_common':
-			return 'index_show_box_common.html'
+		if instance.template == 'menu_1':
+			return 'menu_1.html'
 
-plugin_pool.register_plugin(CMSIndexShowBoxPlugin)  # register the plugin
+plugin_pool.register_plugin(CMSMenu_1_Plugin)  # register the plugin

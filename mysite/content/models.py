@@ -6,7 +6,6 @@ import random
 import os
 # Create your models here.
 from mysite.settings import PROJECT_ROOT
-from content_plugin.models import IndexContentBoxPlugin3
 
 
 class CommonWidget(Object):

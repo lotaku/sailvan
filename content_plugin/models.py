@@ -22,51 +22,6 @@ def my_placeholder_slotname(instance):
 	return 'boxes'
 
 
-class CMSObject(CMSPlugin):
-	"Generic wwhf object"
-	TYPE_CHOICES = [
-		(1, '专业服务'),
-		(2, '技术服务'),
-		(3, '新业务'),
-		(4, '关于万维合丰'),
-		(5, '加入我们'),
-		(6, '备用1'),
-		(7, '备用2'),
-		(8, '备用3'),
-	]
-	cretor = models.ForeignKey(User, null=True, blank=True)
-	last_updated = models.DateTimeField(auto_now=True)
-	date_created = models.DateTimeField(default=datetime.now)
-
-	title = models.TextField(blank=True, null=True)
-	# body = models.TextField(blank=True,null=True)
-	body = RichTextField(blank=True, null=True)
-	brief = models.TextField(blank=True, null=True)  # 简介
-
-	bannerImg = models.ImageField(upload_to='bannerImg/%Y%m%d', blank=True, null=True)  # 标题后面的背景图
-	type_first = models.IntegerField(max_length=256, choices=TYPE_CHOICES, default=1)
-	menu_order = models.IntegerField(max_length=256, default=1, null=True)
-	menu_level = models.IntegerField(max_length=256, default=1, null=True)
-	coverImg = models.ImageField(upload_to='coverImg/%Y%m%d', blank=True, null=True)
-	order = models.IntegerField(max_length=256, null=True)
-
-class IndexContentBoxPlugin3(CMSObject):
-	# index_content_box = models.ForeignKey(IndexContentBox)
-	my_placeholder = PlaceholderField(my_placeholder_slotname)
-
-	IMG_LOCATION_CHOICES = [('lpic465', '图片在左边'), ('pic465', '图片在右边')		]
-	BACKGROUND_COLOR_CHOICES = [(u'#ffffff', u'白色'), (u'#f7f5f8', u'灰色')		]
-	#
-	url = models.URLField(max_length=256, blank=True, null=True)
-	small_title = models.TextField(blank=True, null=True)
-	# style
-	img_location = models.CharField(max_length=256, choices=IMG_LOCATION_CHOICES, default=1)
-	background_color = models.CharField(max_length=256, choices=BACKGROUND_COLOR_CHOICES, default=1)
-
-	def __unicode__(self):
-		return self.title
-		# return 'box pluginxx'
-
 class IndexContentBox(CObject):
 	# index_content_box = models.ForeignKey(IndexContentBox)
 	my_placeholder = PlaceholderField(my_placeholder_slotname)
@@ -129,10 +84,11 @@ class Menu_1(CObject):
 	template = models.CharField(max_length=256, choices=TEMPLATE_CHOICES, default=1)
 	title_url = models.URLField(max_length=256, blank=True, null=True)
 	body_url = models.URLField(max_length=256, blank=True, null=True)
+	reverse_id = models.CharField(max_length=256)
 	# style
 
 	def __unicode__(self):
-		return self.title
+		return self.reverse_id
 
 
 #以下是测试的

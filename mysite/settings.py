@@ -142,10 +142,6 @@ INSTALLED_APPS = (
     'south',
     'reversion',
     'mysite',
-    'polls',
-	'polls_plugin',
-	'aldryn_blog',
-	'aldryn_common',
 	'django_select2',
 	'djangocms_text_ckeditor',
 	'easy_thumbnails',
@@ -161,8 +157,10 @@ INSTALLED_APPS = (
 
 LANGUAGES = (
     ## Customize this
+    ('zh_CN', gettext('zh_CN')),
     ('en', gettext('en')),
     ('de', gettext('de')),
+
 )
 
 CMS_LANGUAGES = {
@@ -173,6 +171,13 @@ CMS_LANGUAGES = {
         'redirect_on_fallback': True,
     },
     1: [
+        {
+            'public': True,
+            'code': 'zh_CN',
+            'hide_untranslated': False,
+            'name': gettext('zh_CN'),
+            'redirect_on_fallback': True,
+        },
         {
             'public': True,
             'code': 'en',
@@ -187,6 +192,7 @@ CMS_LANGUAGES = {
             'name': gettext('de'),
             'redirect_on_fallback': True,
         },
+
     ],
 }
 

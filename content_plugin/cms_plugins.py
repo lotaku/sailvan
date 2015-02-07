@@ -41,7 +41,7 @@ class CMSPostBoxPlugin(CMSPluginBase):
 	# frontend_edit_template = "indexbox_plugin_edit.html"
 	_fieldsets = [
 		(None, {
-			'fields': ['title', 'body', 'template', 'coverImg', 'tag']
+			'fields': ['template', 'title', 'body', 'coverImg', 'tag', 'reverse_id']
 		}),
 		# (None, {
 		# 	'fields': ['key_visual', 'lead_in', 'category', 'tags']
@@ -62,13 +62,7 @@ class CMSPostBoxPlugin(CMSPluginBase):
 		return context
 
 	def get_render_template(self, context, instance, placeholder):
-		if instance.template == 'common_template':
-			return 'common_template.html'
-		elif instance.template == 'list_04_template':
-			return 'list_04_template.html'
-		elif instance.template == 'tabs_01_template':
-			return 'tabs_01_template.html'
-
+		return instance.template + '.html'
 
 plugin_pool.register_plugin(CMSPostBoxPlugin)  # register the plugin
 

@@ -1,0 +1,15 @@
+
+{% load staticfiles  %}
+{% load cms_tags boxes%}
+
+<div class="bewrite info_intro">
+     <h2 class="f18"> {{ instance.title|safe }}</h2>
+     {{ instance|body_stowable|safe }}
+{#            <div class="pt20">#}
+{#                 {{ instance.body|safe }}#}
+{#            </div>#}
+{#            <div class="bor"></div>#}
+
+
+
+</div>

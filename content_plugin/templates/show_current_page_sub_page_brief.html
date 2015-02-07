@@ -1,0 +1,3 @@
+{% load staticfiles  %}
+{% load cms_tags  boxes %}
+{{ request.current_page.reverse_id|show_sub_page_in_post|safe }}

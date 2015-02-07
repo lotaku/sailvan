@@ -207,7 +207,18 @@ CMS_TEMPLATES = (
 
 CMS_PERMISSION = True
 
-CMS_PLACEHOLDER_CONF = {}
+CMS_PLACEHOLDER_CONF = {
+	'common_post.html RB': {
+        "plugins": ['CMSRightBoxPlugin'],
+    },
+	'common_post.html Post Boxes': {
+        "plugins": ['CMSPostBoxPlugin'],
+    },
+	'common_post.html Globle RB': {
+        "plugins": ['CMSRightBoxPlugin'],
+    },
+
+}
 
 DATABASES = {
     'default':
@@ -249,3 +260,5 @@ if not os.path.exists(DBBACKUP_BACKUP_DIRECTORY):
 	os.mkdir(DBBACKUP_BACKUP_DIRECTORY)
 # if not os.path.exists(DBBACKUP_MEDIA_PATH):
 # 	os.mkdir(DBBACKUP_MEDIA_PATH)
+
+#django-cms 自定义 by fzz

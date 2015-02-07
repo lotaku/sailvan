@@ -2,14 +2,6 @@
 {% load cms_tags  boxes %}
 
 <dl>
-{#    <dt><a href="{{ instance.reverse_id|get_page_url_by_title }}">{{ instance.title }}</a></dt>#}
     {{ instance.reverse_id|get_page_title_and_url|safe }}
     {{ instance.reverse_id|get_sub_page_title_and_url|safe }}
-
-{#    <dd><a href="/products/encode_vedio/product_detail/HDmulti_makelesson.html">全高清多画面录课和播控设备</a></dd>#}
-{#    <dd><a href="/products/encode_vedio/product_detail/Portable_live_encoder.html">网络直播便携式编码器</a></dd>#}
-{#    <dd><a href="/products/encode_vedio/product_detail/live_camera.html">网络直播摄像机</a></dd>#}
-{#    <dd><a href="/products/encode_vedio/product_detail/live_encoder_pc.html">Windows平台直播软件</a></dd>#}
-{#    <dd><a href="/products/encode_vedio/product_detail/live_encoder_android_iphone.html">Android/iOS平台直播软件</a></dd>#}
-{#    <dd><a href="/products/encode_vedio/product_detail/atom1_h.264.html">NTV Atom1 H.264编码器</a></dd>#}
 </dl>

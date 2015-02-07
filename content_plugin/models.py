@@ -17,7 +17,6 @@ class TagExtension(PageExtension):
 	info_banner = models.ImageField(upload_to='info_banner/%Y%m%d', blank=True, null=True)  # page的图片
 	brief = RichTextField(blank=True, null=True)  # page简介
 
-
 extension_pool.register(TagExtension)
 
 
@@ -57,6 +56,7 @@ class PostBox(CObject):
 		(u'show_current_page_sub_page_brief', u'显示_当前_页面子页面简介')
 	]
 	reverse_id = models.CharField(max_length=256, blank=True, null=True)
+	show_dividing_line = models.NullBooleanField(default=2, blank=True, null=True)
 	template = models.CharField(max_length=256, choices=TEMPLATE_CHOICES, default=1)
 
 

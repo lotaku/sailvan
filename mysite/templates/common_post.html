@@ -5,7 +5,9 @@
     <!--banner start-->
         <div class="info_banner">
             <div id="logo" class="rel wrapper">
-            <img src="{{ MEDIA_URL }}{{ request.current_page.tagextension.info_banner}}">
+{#            {% render_model request.current_page.tagextension "dd"%}#}
+                {% placeholder 'Info Banner' or%}<img src="{% static "images/research_cooperation.jpg" %}">{% endplaceholder %}
+{#            <img src="{{ MEDIA_URL }}{{ request.current_page.tagextension.info_banner}}">#}
             </div>
         </div>
 <!--banner end-->

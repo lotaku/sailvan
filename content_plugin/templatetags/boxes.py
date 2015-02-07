@@ -8,17 +8,59 @@ from cms.models.pagemodel import Page
 
 
 @register.filter()
+def menu_2(instance):
+	html = u'''
+			<div class="b">
+				<div>
+					{img}
+					<dl>
+						{title}
+						{menu}
+					</dl>
+					<div class="clear"></div>
+				</div>
+			</div>
+			'''
+	menu_html = u'''<dd><a href="{menu_url}">{menu_title}</a></dd>'''
+	title_html = u'''<dt><a href="{title_url}">{title}</a></dt>'''
+	img_html = u'''
+		<dl>
+		<img src="{{ MEDIA_URL}}{img}"/>
+		</dl>
+	'''
+	if instance.converImg:
+		img_html.format(img=instance.converImg)
+	else:
+		img_html = ''
+
+	try:
+		page = Page.objects.get(reverse_id=instance.reverse_id, publisher_is_draft=1)
+	except Page.DoesNotExist:
+		return ''
+
+	title_html.format(title_url=page.get_absolute_url(), title=page.get_title())
+	if not page.children:
+		return html.format(img=img_html, title=title_html, menu=menu_html)
+
+	menu_html_result = ''
+	for children in page.children.all():
+		menu_html_ = menu_html.format(menu_url=children.get_absolute_url(), menu_title=children.get_title())
+		menu_html_result += menu_html_
+
+	html = html.format(img=img_html, title=title_html, menu=menu_html_result)
+
+	return html
+
+
+@register.filter()
 def body_stowable(instance):
 	body = instance.body
 	whole_body = re.sub(u'#以下隐藏#', '', body)
 	whole_body = re.sub(u"\r\n", u"<br>", whole_body)
 	whole_body = re.sub(u"<p>|</p>", u"", whole_body)
 	whole_body = re.sub(u"<br><br><br>", u"<br>", whole_body)
-	# body_list = instance.body.split(u'#以下隐藏#')
 	body_list = re.split(u'#以下隐藏#', instance.body)
-	print body_list
 	showed_body = body_list[0]
-	# hidden_body = body_list[1]
 	body_ = u"\
 			<div class='pt20 intro1' style='display: block;'>{showed_body}</div>\
 			<div class='pt20 intro2' style='display: none;'>{hidden_body}</div>\
@@ -26,18 +68,21 @@ def body_stowable(instance):
 			<div class='bor'></div>\
 			".format(showed_body=showed_body, hidden_body=whole_body)
 	return body_
-	# for line in html2text.html2text(instance.body).splitlines():
-	# 	if len(line.strip()) >= 1:
-	# 		line = line.strip()
-	# 		if "*" == line[0]:
-	# 			line_ = u"<li><b>%s</b></li>" % line[1:]
-	# 			body_ += line_
-	# 		else:
-	# 			line_ = u"<p style='margin-left:10p'>%s</p>" % line
-	# 			body_ += line_
-	# 	else:
-	# 		body_ += line
-	# return body_
+
+@register.filter()
+def body_common(instance):
+
+	html = u'''
+			<div class="pt20">
+				{body}
+			</div>
+			'''.format(body=instance.body)
+
+	if instance.show_dividing_line:
+		dividing_line = u'<div class="bor"></div>'
+		html += dividing_line
+
+	return html
 
 
 @register.filter()
@@ -188,6 +233,10 @@ def show_sub_page_in_post(reverse_id):
 		url = children.get_absolute_url()
 		title = children.get_title()
 		brief = children.tagextension.brief
+		print brief
+		print type(brief)
+		if len(brief) <= 0:
+			brief = u'该页面没有简介'
 
 		html += u'''<dl class="list_03">
 						<dt><a href="{url}">{title}</a></dt>

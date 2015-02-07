@@ -41,7 +41,7 @@ class CMSPostBoxPlugin(CMSPluginBase):
 	# frontend_edit_template = "indexbox_plugin_edit.html"
 	_fieldsets = [
 		(None, {
-			'fields': ['template', 'title', 'body', 'coverImg', 'tag', 'reverse_id']
+			'fields': ['template', 'title', 'show_dividing_line', 'body', 'coverImg', 'tag', 'reverse_id']
 		}),
 		# (None, {
 		# 	'fields': ['key_visual', 'lead_in', 'category', 'tags']
@@ -99,7 +99,7 @@ class CMSIndexShowBoxPlugin(CMSPluginBase):
 	name = _("IndexShowBox")
 	_fieldsets = [
 		(None, {
-			'fields': ['title', 'title_url', 'body', 'body_url', 'template', 'css_top', 'css_left', 'coverImg']
+			'fields': ['title', 'title_url', 'body', 'body_url', 'template', 'css_top', 'css_left', 'coverImg', ]
 		})]
 
 	def get_fieldsets(self, request, obj=None):

@@ -136,8 +136,6 @@ def get_page_title_and_url(reverse_id):
 	html += u'<dt><a href="{url}">{title}</a></dt>'.format(url=url, title=title)
 	return html
 
-
-
 @register.filter()
 def get_sub_page_title_and_url(reverse_id):
 	html = u''

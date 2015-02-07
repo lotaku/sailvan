@@ -118,7 +118,7 @@ def get_page_title_and_url(reverse_id):
 	try:
 		# page = Page.objects.filter(reverse_id__exact=reverse_id, languages='en')
 		# page = Page.objects.get(id=15)
-		page = Page.objects.get(reverse_id=reverse_id)
+		page = Page.objects.get(reverse_id=reverse_id, languages='en')
 	except Page.DoesNotExist:
 		return ''
 	except Page.MultipleObjectsReturned:
@@ -143,11 +143,11 @@ def get_sub_page_title_and_url(reverse_id):
 	html = u''
 	# page = Page.objects.get(id=14)
 	try:
-		page = Page.objects.get(reverse_id=reverse_id)
+		page = Page.objects.get(reverse_id=reverse_id, languages='en')
 	except Page.DoesNotExist:
 		return ''
 	except Page.MultipleObjectsReturned:
-		return u'请注意！有多个页面带有相同reverse_id'
+		return u'多个页面带有相同reverse_id'
 	if page is None:
 		return None
 	if page.children is None:

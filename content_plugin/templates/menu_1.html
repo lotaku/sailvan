@@ -1,7 +1,10 @@
 {% load staticfiles  %}
 {% load cms_tags  boxes %}
-
+{#<div class="b">#}
 <dl>
     {{ instance.reverse_id|get_page_title_and_url|safe }}
     {{ instance.reverse_id|get_sub_page_title_and_url|safe }}
 </dl>
+
+{#    <div class="clear"></div>#}
+{#</div>#}

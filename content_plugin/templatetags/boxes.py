@@ -10,7 +10,6 @@ from cms.models.pagemodel import Page
 @register.filter()
 def menu_2(instance):
 	html = u'''
-			<div class="b">
 				<div>
 					{img}
 					<dl>
@@ -19,26 +18,27 @@ def menu_2(instance):
 					</dl>
 					<div class="clear"></div>
 				</div>
-			</div>
+
 			'''
 	menu_html = u'''<dd><a href="{menu_url}">{menu_title}</a></dd>'''
 	title_html = u'''<dt><a href="{title_url}">{title}</a></dt>'''
 	img_html = u'''
 		<dl>
-		<img src="{{ MEDIA_URL}}{img}"/>
+		<img src="{MEDIA_URL}{img}"/>
 		</dl>
 	'''
-	if instance.converImg:
-		img_html.format(img=instance.converImg)
+	if instance.coverImg:
+		img_html = img_html.format(MEDIA_URL='/media/', img=instance.coverImg)
 	else:
 		img_html = ''
 
 	try:
 		page = Page.objects.get(reverse_id=instance.reverse_id, publisher_is_draft=1)
 	except Page.DoesNotExist:
-		return ''
+		return html
 
-	title_html.format(title_url=page.get_absolute_url(), title=page.get_title())
+	title_html = title_html.format(title_url=page.get_absolute_url(), title=page.get_title())
+	print page.get_absolute_url()
 	if not page.children:
 		return html.format(img=img_html, title=title_html, menu=menu_html)
 

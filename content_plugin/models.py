@@ -82,7 +82,7 @@ class IndexShowBox(CObject):
 
 
 class Menu_1(CObject):
-	TEMPLATE_CHOICES = [(u'menu_1', u'常规')	]
+	TEMPLATE_CHOICES = [(u'menu_1', u'常规'), (u'menu_2', u'带图列表')	]
 	template = models.CharField(max_length=256, choices=TEMPLATE_CHOICES, default=1)
 	title_url = models.URLField(max_length=256, blank=True, null=True)
 	body_url = models.URLField(max_length=256, blank=True, null=True)
@@ -90,7 +90,7 @@ class Menu_1(CObject):
 	# style
 
 	def __unicode__(self):
-		return self.reverse_id
+		return self.title
 
 # class Post(CObject):
 # 	TEMPLATE_CHOICES = [(u'menu_show_sub_page_in_post', u'在主内容区显示子页面简介')	]

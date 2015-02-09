@@ -1,5 +1,5 @@
 {% load cms_tags staticfiles sekizai_tags menu_tags %}
-{% load staticfiles  %}
+{% load staticfiles %}
 {#{% placeholder menu_1 %}#}
 <ul class="menu">
 
@@ -7,10 +7,11 @@
 				<li class="li2" ><a href="#">产品</a>
 {#				<li class="li2" style="width:600px;"><a href="#">产品</a>#}
 {#				<li class="li2"><a href="#">{% placeholder 'top_menu1' %}</a>#}
-					<div class="b">
+					<div class="b" >
+{#                           {% placeholder menu_1 %}#}
 						<div>
                             {% placeholder menu_1 %}
-
+{##}
 {#							<dl>#}
 {#								<dt><a href="/products/encode_vedio/products.html">直播设备和软件</a></dt>#}
 {#								<dd><a href="/products/encode_vedio/product_detail/HDmulti_makelesson.html">全高清多画面录课和播控设备</a></dd>#}
@@ -21,12 +22,12 @@
 {#								<!--<dd><a href="/products/encode_vedio/product_detail/live_encoder_iphone.html">iOS平台直播软件</a></dd>-->#}
 {#								<dd><a href="/products/encode_vedio/product_detail/atom1_h.264.html">NTV Atom1 H.264编码器</a></dd>#}
 {#							</dl>#}
-							<dl>
-								<dt><a href="#">其他</a></dt>
-								<dd><a href="/products/other_products/product_detail/hls_encrypt.html">HLS加密系统</a></dd>
-								<dd><a href="/products/other_products/product_detail/hls_slice.html">HLS切片系统</a></dd>
-								<dd><a href="/products/other_products/product_detail/tv_router.html">数字电视网关</a></dd>
-							</dl>
+{#							<dl>#}
+{#								<dt><a href="#">其他</a></dt>#}
+{#								<dd><a href="/products/other_products/product_detail/hls_encrypt.html">HLS加密系统</a></dd>#}
+{#								<dd><a href="/products/other_products/product_detail/hls_slice.html">HLS切片系统</a></dd>#}
+{#								<dd><a href="/products/other_products/product_detail/tv_router.html">数字电视网关</a></dd>#}
+{#							</dl>#}
 							<div class="clear"></div>
 						</div>
 					</div>
@@ -34,8 +35,15 @@
 				<!--产品结束-->
 
 				<!--解决方案开始-->
-				<li class="li0"><a href="/solutions/solution1/solutions.html">解决方案</a>
-                    {% placeholder menu_2 %}
+				<li class="li0">
+                    {% static_placeholder 'top_menu_2' or%}解决方案{% endstatic_placeholder %}
+{#                 {% placeholder 'Info Banner' or%}<img src="{% static "images/research_cooperation.jpg" %}">{% endplaceholder %}#}
+
+                   <div class="b">
+{#                     {% static_placeholder menu_2 or%}没有菜单2{% endstatic_placeholder %}#}
+                     {% placeholder menu_2 or%}没有菜单2{% endplaceholder %}
+
+                </div>
 {#					<div class="b">#}
 {#						<div>#}
 {#							<dl>#}

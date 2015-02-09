@@ -23,11 +23,7 @@ class CMSIndexMainBoxPlugin(CMSPluginBase):
 		return context
 
 	def get_render_template(self, context, instance, placeholder):
-		# if instance.attr == '1':
-		if 1:
-			return 'indexbox_plugin.html'
-		else:
-			return 'template2.html'
+		return 'indexbox_plugin.html'
 
 
 plugin_pool.register_plugin(CMSIndexMainBoxPlugin)  # register the plugin
@@ -87,8 +83,7 @@ class CMSRightBoxPlugin(CMSPluginBase):
 		return context
 
 	def get_render_template(self, context, instance, placeholder):
-		if instance.template == 'right_box_common':
-			return 'right_box_common.html'
+		return instance.template + '.html'
 
 plugin_pool.register_plugin(CMSRightBoxPlugin)  # register the plugin
 
@@ -112,8 +107,7 @@ class CMSIndexShowBoxPlugin(CMSPluginBase):
 		return context
 
 	def get_render_template(self, context, instance, placeholder):
-		if instance.template == 'index_show_box_common':
-			return 'index_show_box_common.html'
+		return instance.template + '.html'
 
 plugin_pool.register_plugin(CMSIndexShowBoxPlugin)  # register the plugin
 
@@ -124,7 +118,7 @@ class CMSMenu_1_Plugin(CMSPluginBase):
 	name = _("Menu_1")
 	_fieldsets = [
 		(None, {
-			'fields': ['template', 'reverse_id']
+			'fields': ['title', 'template', 'reverse_id', 'coverImg']
 		})]
 
 	def get_fieldsets(self, request, obj=None):
@@ -137,7 +131,8 @@ class CMSMenu_1_Plugin(CMSPluginBase):
 		return context
 
 	def get_render_template(self, context, instance, placeholder):
-		if instance.template == 'menu_1':
-			return 'menu_1.html'
+		return instance.template + '.html'
+
+
 
 plugin_pool.register_plugin(CMSMenu_1_Plugin)  # register the plugin

@@ -16,6 +16,7 @@ urlpatterns = i18n_patterns('',
 	url(r'^conent/', include('mysite.content.urls', namespace='content')),
 	url(r'^aldryn_blog/', include('aldryn_blog.urls', namespace='aldryn_blog')),
 	(r'^ckeditor/', include('ckeditor.urls')),
+	url(r'^select2/', include('django_select2.urls')),
     url(r'^', include('cms.urls')),
 
 )

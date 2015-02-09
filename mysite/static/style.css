@@ -1,0 +1,9 @@
+.fzz_cms_dragarea-8 {
+    /*display: inline !important;*/
+    display: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 5px 5px 4px;
+    position: absolute;
+}

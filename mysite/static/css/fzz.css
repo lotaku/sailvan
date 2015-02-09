@@ -1,0 +1,67 @@
+
+
+.fzz_cms_dragarea{
+    /*background-color: #aa1100;*/
+    /*opacity: 1;*/
+    /*top: 98px;*/
+    /*left: 635px;*/
+    /*margin-left: 900px;*/
+    /*position: relative;*/
+    /*width: 300px;*/
+    /*margin-top: 20px;*/
+    background: none repeat scroll 0 0 #454545;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin: 0 0 5px;
+    padding: 5px 5px 4px;
+    position: absolute;
+}
+
+
+.fzz_cms_dragarea-8 {
+    /*display: inline !important;*/
+    /*display: none;*/
+    /*border-radius: 3px;*/
+    /*box-sizing: border-box;*/
+    /*margin: 20px;*/
+    /*padding: 5px 5px 4px;*/
+    /*position: absolute;*/
+    width:150px !important;
+    margin-right: 10px !important;
+    /*margin-left: 100px !important;*/
+    left: 100px !important;
+    padding-right: 10px;
+    
+}
+.fzz_cms_dragarea-78 {
+    /*display: inline !important;*/
+    /*display: none;*/
+    /*border-radius: 3px;*/
+    /*box-sizing: border-box;*/
+    /*margin: 20px;*/
+    /*padding: 5px 5px 4px;*/
+    /*position: absolute;*/
+    width:150px !important;
+    /*margin-right: 10px !important;*/
+    /*margin-left: 100px !important;*/
+    left: 500px !important;
+    top: 20px !important;
+    /*padding-right: 10px;*/
+
+}
+.fzz_cms_dragarea-3 {
+    /*display: inline !important;*/
+    /*display: none;*/
+    /*border-radius: 3px;*/
+    /*box-sizing: border-box;*/
+    /*margin: 20px;*/
+    /*padding: 5px 5px 4px;*/
+    /*position: absolute;*/
+    width:150px !important;
+    /*margin-right: 10px !important;*/
+    /*margin-left: 100px !important;*/
+    left: 10px !important;
+    top: 20px !important;
+    /*padding-right: 10px;*/
+
+}

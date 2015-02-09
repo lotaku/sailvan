@@ -135,6 +135,7 @@ INSTALLED_APPS = (
     'djangocms_flash',
     'djangocms_googlemap',
     'djangocms_inherit',
+	'django_select2',
     'djangocms_link',
     'djangocms_picture',
     'djangocms_teaser',
@@ -142,7 +143,6 @@ INSTALLED_APPS = (
     'south',
     'reversion',
     'mysite',
-	'django_select2',
 	'djangocms_text_ckeditor',
 	'easy_thumbnails',
 	'filer',
@@ -161,6 +161,11 @@ LANGUAGES = (
     ('en', gettext('en')),
     ('de', gettext('de')),
 
+)
+CMS_STYLE_NAMES = (
+    ('info', gettext("info")),
+    ('new', gettext("new")),
+    ('hint', gettext("hint")),
 )
 
 CMS_LANGUAGES = {

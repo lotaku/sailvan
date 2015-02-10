@@ -1,0 +1,65 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*公用样式开始*/
+body,div,h1,h2,h3,a,ol,li,p {margin:0px; padding:0px;}
+body{font:18px "微软雅黑","黑体"; background:#fff; vertical-align: baseline; color:#999;}
+.head{font-size:12px; font-family:Arial, Helvetica, sans-serif,"����"; line-height:20px; -webkit-text-size-adjust:none; color:#585858;}
+li {list-style:none;}
+img {border:0;}
+.w {position:relative; width:100%;}
+.w1000 {position:absolute; width:1000px; left:50%; margin-left:-500px; top:0px;}
+
+/*公用样式结束*/
+
+.leasing_st {background:url(/static/images/Leasing_spbj1.jpg) center top no-repeat; height:486px;}
+.leasing_stnr {background:url(/static/images/Leasing_sptp.jpg) center top no-repeat; height:486px;}
+.leasing_stnr p {margin-top:175px; color:#1d3d55; font-size:20px; line-height:34px; padding-left:5px; width:580px; display:block;}
+.leasing_stnr a {width:205px; height:49px; display:block; overflow:hidden; margin-top:20px; margin-left:10px;}
+
+
+.leasing_xn {background:#fff;  height:494px;}
+.leasing_xnnr {background:#fff; height:494px;}
+.leasing_xntp {width:500px; height:497px; background:url(/static/images/Leasing_xntp.png) center 100px no-repeat; float:left;}
+.leasing_xnnr h2 {width:500px; height:54px; line-height:54px; text-align:left; font-size:42px; font-weight:normal; color:#333; float:left; margin-top:150px;}
+.leasing_xnnr ol {margin-top:15px; width:500px; float:left;}
+.leasing_xnnr ol li {line-height:34px;}
+
+
+.leasing_cb {background:url(/static/images/Leasing_cbbj.jpg) center 0px repeat-x;}
+.leasing_cbnr {background:none;}
+.leasing_cbtp {background:url(/static/images/Leasing_cptp.png) center 80px no-repeat; float:right;}
+.leasing_cbnr h2 {margin-top:155px;}
+.leasing_xnnr ol li.leasing_cbwz {background:none; padding:0px;}
+
+
+.leasing_wltp {background:url(/static/images/Leasing_wltp.png) center 65px no-repeat;}
+h2.leasing_wlbt {margin-top:180px;}
+
+.leasing_tytp {background:url(/static/images/Leasing_tytp.png) center 70px no-repeat; float:right;}
+.leasing_xnnr ol li.leasing_tywz {background:none; padding:0px; font-size:20px;}
+
+
+h2.leasing_yywz {width:1000px; margin-top:30px;}
+ol.leasing_yynr {width:1000px; margin-top:20px;}
+ol.leasing_yynr li {float:left; background:url(/static/images/Leasing_yyxx.jpg) right top no-repeat; width:333px; height:87px; padding:0px; margin-top:65px;}
+ol.leasing_yynr li p {font-size:16px; line-height:24px; width:130px; display:block; float:left; margin-top:6px;}
+ol.leasing_yynr li img {float:left; margin-left:40px; margin-top:9px;}
+ol.leasing_yynr li p.leasing_yynr2 {margin-left:40px;}
+ol.leasing_yynr li img.leasing_yytp2 {margin-left:20px;}
+
+
+.leasing_kttp {background:url(/static/images/Leasing_kttp.png) center 110px no-repeat;}
+.leasing_ktan {width:203px; height:43px; overflow:hidden; display:block; margin-top:20px; float:left;}
+h2.leasing_ktbt {margin-top:150px;}
+
+
+.leasing_kz {height:281px; overflow:hidden;}
+.leasing_kznr {height:281px;}
+.leasing_kznr ol {width:1000px; height:75px; overflow:hidden; margin-top:50px;}	
+.leasing_kznr ol li {float:left; width:182px; height:73px; border:#7f7f7f solid 1px; margin-right:88px; background:none; overflow:hidden; padding:0;}
+.leasing_kznr ol li img {width:182px; height:73px;}
+
+
+
+

@@ -208,6 +208,10 @@ CMS_TEMPLATES = (
     ('footer_test.html', 'Page with footer'),
     ('index.html', 'Page with Index'),
     ('common_post.html', 'Common Post'),
+    ('common_post_not_right_box.html', 'Common Post No Right'),
+    ('index_1.html', 'Index_1'),
+    ('index_2.html', 'Index_2'),
+    ('index_3.html', 'Index_3'),
 )
 
 CMS_PERMISSION = True

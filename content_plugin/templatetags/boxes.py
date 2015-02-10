@@ -233,14 +233,26 @@ def show_sub_page_in_post(reverse_id):
 		url = children.get_absolute_url()
 		title = children.get_title()
 		brief = children.tagextension.brief
-		print brief
-		print type(brief)
 		if len(brief) <= 0:
 			brief = u'该页面没有简介'
 
+		# 是否显示为列表
+		brief_ = ''
+		for line in brief.split('\r\n'):
+			old_line = line
+			line = re.sub(u"<p>|</p>", u"", line)
+			print line
+			if len(line) >= 1 and line.strip()[0] == '*':
+				line = line[1:]
+				line_ = "<dd>{line}</dd>".format(line=line)
+				brief_ += line_
+			else:
+				brief_ += old_line
+		if brief_:
+			brief = brief_
 		html += u'''<dl class="list_03">
 						<dt><a href="{url}">{title}</a></dt>
-						<p>{brief}</p>
+						{brief}
 						<a class="more" href="{url}">详细&gt;&gt;</a>
 					</dl>'''.format(url=url, title=title, brief=brief)
 	return html

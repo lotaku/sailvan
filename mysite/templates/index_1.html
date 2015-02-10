@@ -1,0 +1,312 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+{% block title %}NTV Media Server G3流媒体服务器 - 云视睿博{% endblock title %}
+
+ {% block other_head %}
+
+<style type="text/css">
+	.index-area{width:100%; background:url(bg04.jpg) repeat-x top #fff; min-height:200px; height:auto!important; height:200px; padding-bottom:20px; padding-top:33px}
+	.li1 div dl dd a{padding-right:20px;padding-top:10px;}
+	.li1 div.b{padding:0;margin:0;float:left;}
+</style>
+<!-- InstanceEndEditable -->
+
+<!-- InstanceEndEditable -->
+
+<style type="text/css">
+body,h1,h2,h3,h4,h5,h6,dl,dd,form,input,p{ margin:0; padding:0}
+body{ font-size:12px; color:#666; font-family:"微软雅黑"}
+img{ border:0}
+.left{ float:left}
+.right{ float:right}
+#ejban h2{ margin-bottom:2px;}
+#ejban h3{ color:#000; font-size:15px}
+.clear{ clear:both}
+
+.lmt{ margin-bottom:30px; width:100%; height:100%; overflow:hidden;}
+#ejban{ width:912px; margin:0 auto}
+.gs{ overflow:hidden; zoom:1}
+.gs-left{ width:590px; border-bottom:#ccc 2px dotted; padding-bottom:28px}
+.gs-left h2 img{ margin-left:40px;}
+.gs-left p{ font-size:14px; margin-top:8px; letter-spacing:0.9px; line-height:27px;}
+.gs-right{ width:276px; border-left:#ccc 1px solid; overflow:hidden;zoom:1;}
+/*menu start*/
+.gs-right ul{padding-left:70px;}
+.gs-right ul li{font-size:16px; list-style:url(/static/images/li.png);  margin-top:8px; letter-spacing:0.9px; line-height:32px;cursor:pointer; border-bottom:1px dashed #f2f2f2}
+.gs-right ul li a{ color:#999; font-family:"微软雅黑"; text-decoration:none; padding-left:10px;}
+.gs-right ul li a:hover{ color:#009edf}
+/*menu end*/
+.gm{ text-align:right; margin-left:30px; padding-top:10px;}
+.gm a{ border:1px solid; float:left;}
+.gm a img{ border:0;}
+.lianxi{border-top:#ccc 1px solid; width:230px; margin-left:42px; margin-top:20px; padding-top:10px; font-size:14px}
+.lianxi p{ font-size:15px}
+.lianxi img{ position:relative; top:5px; margin-right:6px}
+
+.td{ margin-top:30px; overflow:hidden}
+.td dl{ width:280px; height:240px; margin-top:20px}
+.dd-one{ color:#0291E0; font-size:16px; margin:5px 0}
+.dl-one{ margin-left:35px; display:inline}
+
+.bsyq{ margin-top:35px;}
+.bsyq p{ color:#029bf9; font-size:16px; font-weight:bold; line-height:25px; margin-top:20px;}
+.bsyq div{ color:#666; background-color:#f2f2f2; border-radius:8px; margin-top:5px; padding-left:15px; font-size:12px; line-height:28px; font-size:14px;}
+.bsyq div.bu_tit{ background:none; margin-bottom:3px;}
+.bsyq div .blue12{ display:block;  color:#029bf9; font-weight:bold; font-family:"微软雅黑";}
+.bu_tit{ line-height:45px; margin-bottom:30px;}
+
+
+table{ border-collapse:collapse;}
+th{ background-color:#4EAFE4; color:#fff; font-size:17px; font-weight:normal}
+table,th,tr,td{ border:1px solid #ccc; }
+tr{ height:45px}
+.th-xm{ width:180px}
+.td-one{ text-align:center; color:#0291E0}
+.td-two{ padding-left:30px}
+
+.hot{ width:100%; background:url(images/bg03.png) repeat-x; height:42px; line-height:42px; z-index:2}
+.banner{ position:relative;height:420px; overflow:hidden;width:100%;}
+.banner .show{ width:1920px; position:absolute; left:50%;top:0px; margin-left:-960px; height:420px; overflow:hidden; }
+.banner .show ul{ position:relative; height:420px; overflow:hidden;width:1920px; float:left; }
+.banner .show ul li{text-align:center;width:1920px; float:left; height:420px; position:absolute; display:none}
+
+</style>
+  {% endblock %}
+
+{% block banner %}
+    <div class="lmt">
+		<div class="banner">
+			<div class="show">
+				<img src="http://www.ruiboyun.com/products/media_server/product_detail/images/media_server.jpg"/>
+				<span style="position: absolute;top: 213px;left: 960px;font-size: 18px; text-align:left;line-height:29px;color:#133a58;font-family: 'Microsoft Yahei';">在普通双核CPU设备上实现5000+并发播出的流媒体服务器,<br />支持RTMP、RTSP、HLS等协议播出，面向Windows、iOS<br />Android等终端提供稳定流畅的视频直播、时移、点播服务。<br /> <br />
+				<!--<a href="buy_mediaServer.html" style="margin-left:30px;"><img src="images/gm.png" width="203" height="43"></a>
+				<a href="/products/Leasing/Leasing.html" style=" margin-left:15px;"><img src="images/zl.png" width="203" height="43"></a>-->
+				<!--<img src="images/400phone.png" width="261" height="41"/>-->
+				<span><font color="#1CBA3F" size="5px">电话订购：400-088-9255</font></span>
+				</span>
+			</div>
+		<div class="png hot"></div>
+		</div>
+	</div>
+
+{% endblock %}
+{% block index_area %}
+
+	<div id="ejban" style="margin-bottom:30px;">
+
+      <div class="gs">
+        <div class="gs-left left">
+          <h2 id="a"><img src="{% static "images/2014-07-28_101956.png" %}" width="95" height="26"></h2>
+          <img src="{% static "images/bk.png" %}" width="600" height="15">
+          <p>NTV Media Server G3是一款高性能、大并发的流媒体服务器系统，该系统完全由C语言
+         编码实现，能够最大限度的挖掘硬件和网络的潜能，实现在一台普通服务器上支持超过50
+          00个并发播出。系统支持HTTP、HLS、RTMP等播出协议，面向Windows、Android、iOS
+		  、Mac等终端提供稳定流畅的直播、点播、时移、回看服务，广泛应用到互联网教学、
+          互联网电视、IPTV、VOD、视频聊天和各种互联网直播点播应用中。</p>
+        </div>
+        <!--/gs-left-->
+		<div class="gs-right right">
+          <ul>
+			<li><a href="#a">产品概述</a></li>
+			<li><a href="#b">产品特点</a></li>
+			<li><a href="#c">授权方式</a></li>
+			<li><a href="#d">部署要求</a></li>
+		  </ul>
+        </div>
+        <!--/gs-right-->
+      </div>
+      <!--/gs-->
+      <div class="clear"></div>
+
+      <div class="td">
+        <h2 id="b"><img src="{% static "images/2014-07-28_102004.png" %}" width="102" height="28" style=" margin-left:40px;"></h2>
+        <img src="{% static "images/bk1.png" %}" width="900" height="15" />
+        <dl class="left">
+          <dt><img src="{% static "images/fea1.png" %}" width="160" height="96"></dt>
+          <dd class="dd-one">跨网络、跨终端的播出</dd>
+          <dd>能够通过宽带互联网、移动互联网和双向电视网络向Windows终端、ios终端、Android终端、电视盒子等所有类型终端提供流畅的视音频播出服务，提供HLS、HTTP、RTMP、HTML5规范下的播出服务。</dd>
+        </dl>
+        <dl class="left dl-one">
+          <dt><img src="{% static "images/fea2.png" %}" width="160" height="96"></dt>
+          <dd class="dd-one">广泛的应用范围</dd>
+          <dd>具有电视直播、现场直播、时移电视、即刻回看和视频点播功能，适合OTT TV、IPTV、互联网教育、视频聊天、现场直播和VOD等应用。</dd>
+        </dl>
+        <dl class="right">
+          <dt><img src="{% static "images/fea3.png" %}" width="160" height="96"></dt>
+          <dd class="dd-one">极高的播出服务性能</dd>
+          <dd>服务器内核全部使用C语言开发实现能够在一台普通4核单CPU服务器上实现超过5000个并发流的播出，充分挖掘设备硬件的能力，性能超越国外商用流媒体服务器系统。</dd>
+        </dl>
+
+        <dl class="left">
+          <dt><img src="{% static "images/fea4.png" %}" width="160" height="96"></dt>
+          <dd class="dd-one">高度可伸缩能力</dd>
+          <dd>系统可做单机部署和集群部署，可根据应用规模配置相应的硬件和网络设施，实现从数千并发到百万级并发、从企业级运营规模到电信级运营规模的应用伸缩，投入和扩展主动权完全在客户手中。</dd>
+        </dl>
+        <dl class="left dl-one">
+          <dt><img src="{% static "images/fea5.png" %}" width="160" height="96"></dt>
+          <dd class="dd-one">内容再发布引擎</dd>
+          <dd>强大的直播流的再发布引擎，用于将直播流和点播流分发到服务网络里的其他主机上，快速实现CDN网络和负载均衡系统中的内容同步分发。</dd>
+        </dl>
+        <dl class="right">
+          <dt><img src="{% static "images/fea6.png" %}" width="160" height="96"></dt>
+          <dd class="dd-one">灵活的转码引擎</dd>
+          <dd>将原有独立部署的转码工作站与流媒体服务器合二为一，提供在线转码服务，对直播流和文件进行转码，转码服务与流媒体服务器无缝对接，即转即播，提供手动转码和远程调度转码模式。</dd>
+        </dl>
+
+
+        <dl class="left">
+          <dt><img src="{% static "images/fea7.png" %}" width="160" height="96"></dt>
+          <dd class="dd-one">HLS自动切片和打包</dd>
+          <dd>对多种格式的多媒体文件和直播流进行自动切片和打包，生成m3u8索引文件，输出HLS播出流。无需做额外开发就可以在输出HLS直播流的同时实现时移播放和快速回看。</dd>
+        </dl>
+        <dl class="left dl-one">
+          <dt><img src="{% static "images/fea8.png" %}" width="160" height="96"></dt>
+          <dd class="dd-one">安全播出和防盗链能力</dd>
+          <dd>严密的用户认证和播放授权策略，可以只通过认证的用户提供内容播放的授权，可对敏感的内容进行加密，有效抵御盗链和非法访问。</dd>
+        </dl>
+        <dl class="right">
+          <dt><img src="{% static "images/fea9.png" %}" width="160" height="96"></dt>
+          <dd class="dd-one">远程DVR</dd>
+          <dd>在流媒体服务器上对直播流进行实时录制，录制格式支持MP4、FLV和Apple HLS切片文件。录制内容可以用户快速回看和视频点播。</dd>
+        </dl>
+
+
+        <dl class="left">
+          <dt><img src="{% static "images/fea10.png" %}" width="160" height="96"></dt>
+          <dd class="dd-one">功能完善的系统管理平台</dd>
+          <dd>客户可以Web管理系统远程管理网上流媒体服务器，系统具有企业应用管理、直播流管理、点播流管理、转码管理、直播流和点播流监控、系统性能监控、在线用户统计、播出认证管理，流再发布管理等功能。</dd>
+        </dl>
+        <dl class="left dl-one">
+          <dt><img src="{% static "images/fea11.png" %}" width="160" height="96"></dt>
+          <dd class="dd-one">丰富的服务接口</dd>
+          <dd>提供多协议播出接口、在线用户数量查询、播出流查询、播出文件查询、转码调度、转码进度查询等接口。</dd>
+        </dl>
+        <dl class="right">
+          <dt><img src="{% static "images/fea12.png" %}" width="160" height="96"></dt>
+          <dd class="dd-one">CDN和云主机一站连接</dd>
+          <dd>与蓝汛、GDL、阿里云、腾讯云等主流CDN和云主机完成对接测试，无需测试投入，一站启用。</dd>
+        </dl>
+      </div>
+      <!--/td-->
+
+     <table width="912" cellpadding="0" cellspacing="0">
+          <tr>
+            <th class="th-xm">项目</th>
+            <th>指标</th>
+          </tr>
+          <tr>
+            <td class="td-one">直播</td>
+            <td class="td-two">电视直播、现场摄像直播；时移电视和即刻回看；</td>
+          </tr>
+          <tr>
+            <td class="td-one">点播</td>
+            <td class="td-two">
+            <div>支持MP4、FLV、M3U8格式文件的流式化点播播放；支持快速跳动播放（Streaming Play）；</div>
+            <div>实时带宽探测，在保障服务质量的前提下最大限度降低每个用户的访问负载，提高整机服务能力；</div></td>
+          </tr>
+          <tr>
+            <td class="td-one">归档</td>
+            <td class="td-two">对直播信号实时归档，支持MP4、FLV、HLS格式的归档；对归档文件进行快速回看和流式化点播；</td>
+          </tr>
+		  <tr>
+			<td class="td-one">转码</td>
+			<td class="td-two">
+				<div>支持对mp4、avi、ts、mpg、wmv、3gp、mov、flv、vp6、vp8等格式视频文件进行转码；</div>
+				<div>支持过程调度转码和回调（调度API）；转码队列大小可调；支持UI操作转码；通过FTP和位置共享上传资源；</div>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="td-one">输入协议</td>
+			<td class="td-two">RTMP、HTTP、UDP、RTSP、MMS</td>
+		  </tr>
+          <tr>
+            <td class="td-one">播出协议</td>
+            <td class="td-two">HLS、HTTP、RTMP、HTML5</td>
+          </tr>
+          <tr>
+            <td class="td-one">终端适配</td>
+            <td class="td-two">
+						   <div>Safari;Chrome;IE;Adobe Flash Player;Android(3.0 or later)device;VLC Player;</div>
+						   <div>iPhone,iPod,iPad(iOs3.0 or later);Other Flash and HLS-compatible players</div>
+          </tr>
+          <tr>
+            <td class="td-one">媒体格式支持</td>
+            <td class="td-two">H264视频，AAC/MP3音频；M3U8、FLV、MP4封装</td>
+          </tr>
+          <tr>
+            <td class="td-one">动态码率</td>
+            <td class="td-two">支持HLS和Adobe码率动态适应技术</td>
+          </tr>
+          <tr>
+            <td class="td-one">安全播出</td>
+            <td class="td-two">
+							<div>加强的token认证技术，在数据播放层面无法绕过；直播流发布安全认证；直播流播出安全认证；</div>
+							<div>点播流播出安全认证；接口访问安全认证</div>
+			</td>
+          </tr>
+          <tr>
+            <td class="td-one">访问统计</td>
+            <td class="td-two">实时统计在线用户数量；</td>
+          </tr>
+          <tr>
+            <td class="td-one">播出性能</td>
+            <td class="td-two">NTV标配服务器硬件单台设备超过5000并发</td>
+          </tr>
+          <tr>
+            <td class="td-one">稳定性</td>
+            <td class="td-two">广播级7*24不间断稳定播出</td>
+          </tr>
+          <tr>
+            <td class="td-one">流媒体特征</td>
+            <td class="td-two">Segmented MPEG-2 TS (iPhone/iPad M3U8切片);Flash/TS HTTP-based adaptive streaming;RTMP</td>
+          </tr>
+          <tr>
+            <td class="td-one">CDN和集群</td>
+            <td class="td-two">内置集群技术；CDN对接</td>
+          </tr>
+          <tr>
+            <td class="td-one">服务接口</td>
+            <td class="td-two">
+				<div>直播流查询接口、视频文件查询接口、在线用户查询接口、播放服务认证接口、推流服务认证接口、</div>
+				<div>直播流发布接口、HTTP Flash Video播放接口、HLS播放接口、RTMP播放接口、HTML5播放接口、</div>
+				<div>转码调试接口、转码结果查询接口</div>
+			</td>
+          </tr>
+		  <tr>
+			<td class="td-one">系统管理</td>
+			<td class="td-two">
+				<div>基于Web的系统管理平台；Application管理；直播流管理；点播流管理；归档配置管理；电视流配置管理；</div>
+				<div>安全认证管理；串流管理；直播流再分发管理；转码管理；系统资源使用监控</div>
+			</td>
+		  </tr>
+        </table>
+
+      <div class="bsyq">
+
+        <div class="bu_tit" id="c"><img style=" margin-top:25px; padding-left:40px;" src="{% static "images/scfs.png" %}" width="94" height="21"></div>
+         <img src="{% static "images/bk1.png" %}" width="900" height="15" />
+        	<div>按每OS安装，永久授权。</div>
+
+      	<div class="bu_tit" id="d" style="margin-top:40px;"><img style=" margin-left:40px;"src="{% static "images/bsyq.png" %}" width="94" height="21"></div>
+         <img src="{% static "images/bk1.png" %}" width="900" height="15" />
+        <p>操作系统</p>
+        	<div>Linux系统，推荐使用Red Hat Enterprise Linux、CentOS、Oracle Linux</div>
+        <p>硬件环境</p>
+        	<div><span class="blue12">基本配置</span>CPU：双核2.0GHz内存：4GB硬盘：500GB网卡：千兆网口</div>
+            <div><span class="blue12">推荐配置（企业级，3000并发）</span>CPU：英特尔® 至强® E5-2400系列4核心;内存：8GB;硬盘：1TB;网口：双千兆网口</div>
+            <div><span class="blue12">推荐配置（运营级，5000或更高并发要求）</span>CPU：2*英特尔® 至强® E5-2400系列4核心，或更高性能CPU;内存：16GB1600 MHz RDIMMS，或更大内存硬盘：2TB，或根据资源规模选用磁盘阵列;网口：10千兆网口;CDN和集群： 推荐对接CDN系统或集群配置</div>
+        <p>网络</p>
+        	<div><span class="blue12">出口带宽</span>根据运营规模和预期并发数配置，通常企业级应用需要至少10兆出口，电信级运营需要GB级出口或CDN网络。</div>
+            <div><span class="blue12">防火墙</span>各级防火墙须开放如下看口：80, 81,1935, 1936;   如需远程登陆管理，还需开放SSH端口，如22 </div>
+        <p>技术文档</p>
+        	<div>FQA</div>
+
+
+
+
+      </div>
+
+    </div>
+    <!--/ejban-->
+{% endblock  %}
+

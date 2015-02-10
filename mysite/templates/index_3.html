@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+{% block title %}视频编码器系列{% endblock title %}
+
+
+ {% block other_head %}
+          <link type="text/css" rel="stylesheet" href="{% static 'css/cpjs.css'%}">
+
+<style type="text/css">
+	.index-area{width:100%; background:url(bg04.jpg) repeat-x top #fff; min-height:200px; height:auto!important; height:200px; padding-bottom:20px; padding-top:33px}
+	.li1 div dl dd a{padding-right:20px;padding-top:10px;}
+	.li1 div.b{padding:0;margin:0;float:left;}
+</style>
+{% endblock %}
+
+
+
+
+{% block index_area %}
+  <div class="bj">
+  <div class="w980">
+    <img src="{% static "images/hlw-top.jpg" %}" />
+    <p class="jddw" style="top:189px;">在各种互联网视频直播应用场景中，如何选用合适的直播设备是运营商最先考虑的问题。作为专业的编码技术开发商，云视睿博充分理解客户的需求，在使用场合、网络适配能力、便利性和便携性、设备价格等多方面进行业务细分，开发出了多款视频直播设备和软件，可以满足您在所有视频直播场景下的业务需求。所有直播设备和软件均可与云视睿博流媒体服务器实现无缝对接。</p>
+  </div>
+</div>
+
+  <div class="erbufen">
+     <a><img src="{% static "images/qgq.jpg" %}"/></a>
+     <span class="l-bj"><img src="{% static "images/bjzs.jpg" %}" /></span>
+     <span class="mtopl"><img src="{% static "images/zuoyi.jpg" %}" /></span>
+     <p style="font-size:15px;line-height:25px;">全高清多画面录课和播控设备。专门为在线教育和远程会议开发的多通道高清直播设备，支持现场信号、展台、VGA等类型信号输入，多画面任意切分和组合，1080P高清编码，直播视频实时推送到流媒体服务器，实现高清晰度互联网直播。如果您要做在线视频直播教育解决方案，这是最佳的选择。</p>
+     <a href="./product_detail/HDmulti_makelesson.html" target="_parent"><img style="border:none;" class="right" src="{% static "images/xx.png" %}" /></a>
+  </div>
+
+    <div class="sanbufen">
+     <a><img src="{% static "images/bxs.jpg" %}" /></a>
+     <span class="l-bj"><img src="{% static "images/bjzs.jpg" %}" /></span>
+     <span class="mtop2">
+      <img src="{% static "images/pic-4.jpg" %}" />
+      <img src="{% static "images/pic-5.jpg" %}" />
+     </span>
+     <p style="font-size:15px;line-height:25px;">一杯咖啡的重量，iPhone6大小的尺寸，却有着1080p高清画幅的编码能力。通过HDMI接口连接专业摄像机，即插即用，可以快速将各种现场信号实时直播到互联网上。适合于远程教育、高端会议、远程医疗、新闻采访、市政发布等高质量视频直播场景。</p>
+     <a href="./product_detail/Portable_live_encoder.html" target="_parent"><img style="border:none;" class="right" src="{% static "images/xx.png" %}" /></a>
+  </div>
+
+      <div class="sibufen">
+     <a><img src="{% static "images/gqz.jpg" %}"/></a>
+     <span class="l-bj"><img src="{% static "images/bjzs.jpg" %}" /></span>
+     <span class="mtop3">
+       <img src="{% static "images/pic-6.jpg" %}" />
+       <img src="{% static "images/pic-7.jpg" %}" />
+     </span>
+     <p style="font-size:15px;line-height:25px;">只要有这样一台网络摄像机，现场不再需要任何其他设备，就可以进行高质量的视频直播。工业级的外形和稳定性设计，高清视频采集和编码能力，使得这款摄像机可以满足多种场景的直播需求，特别适合于幼儿园远程监控和直播、企业远程监控和直播、会议直播、婚礼直播、远程教育等视频直播场景。</p>
+     <a href="./product_detail/live_camera.html" target="_parent"><img style="border:none;" class="right" src="{% static "images/xx.png" %}" /></a>
+  </div>
+
+   <div class="wubufen" style="margin-bottom: 100px;">
+     <a><img src="{% static "images/rjxl.jpg" %}"/></a>
+     <span class="l-bj"><img src="{% static "images/bjzs.jpg" %}" /></span>
+       <ul class="pc">
+         <p class="ntvpc"><img src="{% static "images/ntvpc.jpg" %}" /></p>
+         <p class="cejz"><img src="{% static "images/pic-1.jpg" %}" /></p>
+         <li>专门为各种现场直播开发的采集编码系统</li>
+         <li>通过USB、HDMI、SDI接口连接高清摄像设备</li>
+         <li>H.264高清编码，现场影像实时发布	</li>
+         <li>多镜头输入，多画面平滑切换</li>
+         <li>桌面采集直播，桌面和现场平滑切换</li>
+         <li>界面美观，操作简单</li>
+         <a href="./product_detail/live_encoder_pc.html" target="_parent"><img style="border:none;" class="right" src="{% static "images/xx.png" %}" /></a>
+       </ul>
+       <ul class="ios">
+         <p class="ntvpc"><img src="{% static "images/ntvl.jpg" %}" /></p>
+         <p class="cejz"><img src="{% static "images/pic-2.jpg" %}" /></p>
+         <li>轻巧便携，不仅是编码器，还是一个在线直
+    播发布终端</li>
+         <li>随时将您的所见所得直播在互联网上</li>
+         <li>拍摄能力仅受摄像头清晰度影响，功能与专业
+    直播软件无二</li>
+         <li>H264编码，支持小画幅编码和高清编码</li>
+         <li>通过WIFI和3G进行信号传输</li>
+         <a href="./product_detail/live_encoder_android_iphone.html" target="_parent"><img style="border:none;" class="right" src="{% static "images/xx.png" %}" /></a>
+       </ul>
+       <ul class="atom">
+         <p class="ntvpc"><img style="height: 16px;margin-top: -5px;" src="{% static "images/atom.jpg" %}" /></p>
+         <p class="cejz"><img src="{% static "images/pic-3.jpg" %}" /></p>
+         <li>广播级H.264编码器，满足DVB、IPTV、网络电
+    视在线编码需要</li>
+         <li>支持IP、SDI、HDMI、AV、S-Video等输入类型</li>
+         <li>高清、标清和低码率编码输出</li>
+         <li>一台设备支持三路标清或一路高清在线实时编码</li>
+         <a href="./product_detail/atom1_h.264.html" target="_parent"><img style="border:none;" class="right" src="{% static "images/xx.png" %}" /></a>
+       </ul>
+
+
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+<!--底部 end-->
+
+<script type="text/javascript">
+$(function(){
+	$('.Tabs').tabs();
+})
+</script>
+  <!-- InstanceEndEditable -->
+

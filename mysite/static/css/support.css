@@ -1,0 +1,25 @@
+.Box3{width:980px;background: url(../images/round_bg_support.jpg) repeat-y;}
+.Box3 .package {padding: 35px;width: 910px;float: left;}
+.Box4{float: left;margin-bottom: 13px;background: url(round_bg_support.jpg) repeat-y;}
+.Box4 .package {padding: 35px;width: 910px;float: left;}
+.about p {width:764px;}
+.about p.long{width: 910px;}
+.about img{padding: 10px 0 0 0;}
+body{font-family:  "Microsoft Yahei",PMingLiU,Verdana,Arial,Helvetica,sans-serif;}
+
+
+.bewrite{padding: 0;}
+.softDown,.chmDown{position: relative;}
+.softDown_icon,.chmDown_icon{float: left; width: 230px; height: 160px;}
+.softDown_icon dl dt,.chmDown_icon dl dt{font-size:18px; height: 30px; text-indent: 23px;}
+.softDown_icon dl dd,.chmDown_icon dl dd{width: 120px; height: 78px;}
+.ruanjian{ background: url(../support/images/down.png);}
+.shouce{ background: url(../support/images/book.png);}
+.yanshi{background: url(../support/images/yanshi.png);}
+.shouhou{background: url(../support/images/shouhou.png);}
+.contacts{background: url(../support/images/contacts.png);}
+.softDown_det,.chmDown_det{float: left;}
+.downBtnBox{ position: absolute; left: 800px; top: 15px;}
+.downBtnBox ul li{display: block; background: url(../support/images/downBtn.png); width: 83px; height: 24px; margin: 0 0 3px 0; text-indent: 20px; }
+.downBtnBox ul li.no{background: none;}
+.downBtnBox ul li a{color: #fff;}

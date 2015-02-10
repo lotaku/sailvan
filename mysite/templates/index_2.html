@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% load cms_tags staticfiles sekizai_tags menu_tags %}
+{% block title %}NTV Media Server G3流媒体服务器 - 云视睿博{% endblock title %}
+
+
+ {% block other_head %}
+     <link type="text/css" rel="stylesheet" href="{% static 'css/Leasing.css'%}">
+         <style type="text/css">
+         .footer{
+             font:12px;
+
+         }
+     </style>
+{#     <style type="text/css">#}
+{#	.index-area{width:100%; background:url(bg04.jpg) repeat-x top #fff; min-height:200px; height:auto!important; height:200px; padding-bottom:20px; padding-top:33px}#}
+{#	.li1 div dl dd a{padding-right:20px;padding-top:10px;}#}
+{#	.li1 div.b{padding:0;margin:0;float:left;}#}
+{#</style>#}
+{% endblock %}
+
+
+{% block index_area %}
+<!--首屏开始-->
+<div class="w leasing_st">
+  <div class="w1000 leasing_stnr">
+    <p>
+      无需购买硬件设备和软件系统<br />
+      无需租用IDC机位和带宽<br />
+      无需专业运维团队，节约成本50%<br />
+      快速开通百万级用户规模的视频播出服务<br />
+      面向所有终端，提供多协议、大并发、高清流畅的视频播出服务
+    </p>
+    <a href="http://220.181.161.52/letServ/" target="_blank"><img src="{% static "images/Leasing_span.png" %}" align="立即开通" /></a>
+  </div>
+</div>
+<!--首屏结束-->
+
+<!--性能开始-->
+<div class="w leasing_xn">
+  <div class="w1000 leasing_xnnr">
+    <div class="leasing_xntp"></div>
+    <h2>稳如磐石，性能卓越</h2>
+    <ol>
+      <li>云视睿博自主研发的高性能流媒体服务器</li>
+      <li>大并发大数据传输，满足各种级别运营需要</li>
+      <li>专业的运维团队7*24服务，电信级品质保障</li>
+      <li>多级安全播出策略确保您的播出只为授权用户服务</li>
+    </ol>
+  </div>
+</div>
+<!--性能结束-->
+
+
+<!--成本开始-->
+<div class="w leasing_xn leasing_cb">
+  <div class="w1000 leasing_xnnr leasing_cbnr">
+    <div class="leasing_xntp leasing_cbtp"></div>
+    <h2>为您节省更多的成本</h2>
+    <ol>
+      <li class="leasing_cbwz">告别前期投资，大幅缩减IT总成本40%-60%</li>
+      <li class="leasing_cbwz">包年包月，按天开通的租赁模式</li>
+      <li class="leasing_cbwz">免费提供PC、手机等终端上视频直播播控软件，专业摄像设备</li>
+      <li class="leasing_cbwz">和移动终端无缝接入，节省了您构建服务的时间和成本</li>
+    </ol>
+  </div>
+</div>
+<!--成本结束-->
+
+
+<!--网络开始-->
+<div class="w leasing_xn">
+  <div class="w1000 leasing_xnnr">
+    <div class="leasing_xntp leasing_wltp"></div>
+    <h2 class="leasing_wlbt">最优质的网络</h2>
+    <ol>
+      <li class="leasing_cbwz">高性能主机系统和遍布全国的CDN节点，让您的视频流无<br />处不达</li>
+    </ol>
+  </div>
+</div>
+<!--网络结束-->
+
+
+<!--体验开始-->
+<div class="w leasing_xn leasing_cb">
+  <div class="w1000 leasing_xnnr leasing_cbnr">
+    <div class="leasing_xntp leasing_tytp"></div>
+    <h2 class="leasing_wlbt">丰富多彩的应用体验</h2>
+    <ol>
+      <li class="leasing_tywz">直播、点播、时移、回看、EPG</li>
+    </ol>
+  </div>
+</div>
+<!--体验结束-->
+
+
+<!--范围开始-->
+<div class="w leasing_xn">
+  <div class="w1000 leasing_xnnr ">
+    <h2 class="leasing_yywz">应用范围</h2>
+    <ol class="leasing_yynr">
+      <li>
+        <p>互联网教育，在线课程直播、回看、点播</p>
+        <img src="{% static "images/Leasing_yyjs.png" %}" width="102" height="71" />
+      </li>
+      <li>
+        <p class="leasing_yynr2">互联网电视 OTT TV/ IPTV，无缝接入EPG</p>
+        <img src="{% static "images/Leasing_yysp.png" %}" width="102" height="71" class="leasing_yytp2" />
+      </li>
+      <li style="background:none;">
+        <p class="leasing_yynr2">互联网监控，企业远程监控、幼儿园监控</p>
+        <img src="{% static "images/Leasing_yysy.png" %}" width="102" height="71" class="leasing_yytp2" />
+      </li>
+
+      <li>
+        <p style="width:144px;">企业现场直播、市政宣传直播、互联网视频直播、视频点播</p>
+        <img src="{% static "images/Leasing_yyjk.png" %}" width="102" height="71" />
+      </li>
+      <li>
+        <p class="leasing_yynr2">企业多媒体资源<br />发布，点播资源<br />加速</p>
+        <img src="{% static "images/Leasing_yyjp.png" %}" width="102" height="71" class="leasing_yytp2" />
+      </li>
+      <li style="background:none;">
+        <p class="leasing_yynr2">个人和团体专业级互联网视频直播、视频点播</p>
+        <img src="{% static "images/Leasing_yyrw.png" %}" width="102" height="71" class="leasing_yytp2" />
+      </li>
+    </ol>
+  </div>
+</div>
+<!--范围开始-->
+
+
+<!--体验开始-->
+<div class="w leasing_xn leasing_cb">
+  <div class="w1000 leasing_xnnr leasing_cbnr">
+    <div class="leasing_xntp leasing_kttp"></div>
+    <h2 class="leasing_wlbt leasing_ktbt">立即开通服务</h2>
+    <ol>
+      <li class="leasing_tywz">点击下面链接，快速开通您的百万级用户规模视频播出服务，现在开始体验吧</li>
+    </ol>
+    <a href="http://220.181.161.52/letServ/" target="_blank" class="leasing_ktan"><img src="{% static "images/Leasing_ktan.png" %}" alt="立即开通" width="203" height="43" /></a>
+  </div>
+</div>
+<!--体验结束-->
+
+
+<!--合作伙伴开始-->
+<div class="w leasing_xn leasing_kz">
+  <div class="w1000 leasing_xnnr leasing_kznr">
+    <h2 class="leasing_yywz">合作伙伴</h2>
+    <ol>
+      <li><a href="http://www.189.cn/" target="_blank"><img src="{% static "images/Leasing_hzdx.jpg" %}" alt="中国电信" /></a></li>
+      <li><a href="http://www.drpeng.com.cn/" target="_blank"><img src="{% static "images/Leasing_hzpb.jpg" %}" alt="鹏博士集团" /></a></li>
+      <li><a href="#" target="_blank"><img src="{% static "images/Leasing_hzsb.jpg" %}" alt="chinacache" /></a></li>
+      <li style="margin:0px;"><a href="http://www.10010.com/" target="_blank"><img src="{% static "images/Leasing_hzlt.jpg" %}" alt="中国联通" /></a></li>
+    </ol>
+  </div>
+</div>
+{% endblock %}
+
+

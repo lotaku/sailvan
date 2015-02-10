@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load cms_tags staticfiles sekizai_tags menu_tags boxes%}
+ {% block other_head %}
+     <link type="text/css" rel="stylesheet" href="{% static 'css/support.css'%}">
+=
+{% endblock %}
+
+{% block banner %}
+    <!--banner start-->
+        <div class="info_banner">
+            <div id="logo" class="rel wrapper">
+{#            {% render_model request.current_page.tagextension "dd"%}#}
+                {% placeholder 'Info Banner' or%}<img src="{% static "images/research_cooperation.jpg" %}">{% endplaceholder %}
+{#            <img src="{{ MEDIA_URL }}{{ request.current_page.tagextension.info_banner}}">#}
+            </div>
+        </div>
+<!--banner end-->
+{% endblock %}
+
+
+
+{% block index_area %}
+    <!--banner end-->
+<!--main start-->
+<div class="main wrapper">
+{#{% page_attribute "page_title" 13 as title %}#}
+{#	<div class="current"><a href="./../../../index.html">首页</a>&nbsp;&raquo;&nbsp;解决方案&nbsp;&raquo;&nbsp;远程教学</div>#}
+	<div class="current">{{ request.current_page|small_menu|safe }}</div>
+	<div class="Left_box">
+		<div class="Box4"> <img src="{% static 'images/round_top_support.jpg' %}" class="fl"/>
+			<div class="package">
+				<div class="pro_three">
+                    {% placeholder  "Post Boxes" %}
+
+				</div>
+                <div class="pro_three">
+					<div class="bewrite info_intro">
+						<h2>研发合作</h2>
+						<div class="pt20 intro1">云视睿博是一家成长中的科技公司，公司在多媒体编解码、流媒体播出和播放、数字版权保护、安全加密播出、互联网电视、视频会议、远程教育、移动终端开发等技术领域拥有深厚的人才储备和技术积累，形成了一批成熟的产品和解决方案。<br>
+							&nbsp;<br>
+							云视睿博愿与科技企业、教育机构、政府机构、广电运营商、电信运营商等在这些领域内开展技术合作，实现互利共赢和共同发展。<br>
+							&nbsp;<br>
+						 </div>
+						<div class="bor"></div>
+					</div>
+					<div class="bewrite info_intro">
+					<dl class="list_03">
+						<dt>合作方式</dt>
+						<dd>技术提供
+						<h3>将我们的专利、基础库、源代码、SDK、技术方案等内容授权给合作方使用，能够有效减少合作方在产品和项目实施的技术风险、缩短开发周期、降低研发成本。</h3>
+						</dd>
+						<dd>项目合作
+						<h3>根据我们的技术专长，合作方将其项目中部分研发工作交由我们承担，双方共同承担项目责任，共同按照项目约定的时间和范围完成项目目标。</h3>
+						</dd>
+						<dd>研发合作
+						<h3>与合作方一起在有重要价值的产品和技术领域进行技术研究和开发合作，根据双方分工和工作的重要性承担相应的研发投入和获取产出收益。</h3>
+						</dd>
+						<dd>开发外包
+							<h3>合作方将项目或产品研发任务交由我们来做，按照合作方要求的时间进度和质量目标完成任务，交付项目或产品成果。</h3>
+						</dd>
+						<dd>咨询和培训
+							<h3>为合作方提供技术咨询和培训服务。</h3>
+						</dd>
+					</dl>
+					<div class="bor"></div>
+					</div>
+					<div class="bewrite info_intro">
+					<dl class="list_03">
+						<dt>合作领域</dt>
+						<dd>流媒体播出
+						<h3>云视睿博拥有完全自主知识产权的高性能流媒体服务器和相应技术积累，在提供成熟产品的同时能够为您提供更多的定制开发和能力扩展，能够有效降低运营服务中的服务器投入成本，满足个性化播出服务的应用需求。
+							<br>
+							研发案例参见 NTV Media Server G3
+						</h3>
+						</dd>
+						<dd>视频采集编码和直播
+						<h3>云视睿博在视音频采集和H264+AAC多媒体编解码领域具有成熟的技术和开发经验，能够定制开发视频编码器，使用多种协议对编码内容进行流媒体直播源发布。
+							<br>
+							我们能够将您的摄像机信号、电脑屏幕、PPT讲稿和本地视频文件流化发布到流媒体服务器上，对外提供现场直播服务，能够满足远程教育、现场直播等复杂场景下的视频直播应用需求。
+							<br>
+							研发案例参见 NTV Live Encoder for Windows
+						</h3>
+						</dd>
+						<dd>移动终端编码和直播
+						<h3>云视睿博熟悉Android、iOS、Win8移动终端的多媒体采集编码和播放技术，能够为您提供基于移动终端的视频采集编码和流媒体直播技术方案。
+							<br>
+							我们将这些移动终端上的多媒体采集编码、流媒体发布（RTMP协议、RTSP协议、UDP协议）等功能封装成面向这些平台的基础库，你可以使用尽量少的代码快速完成移动终端产品的开发。
+							<br>
+							研发案例参见 NTV Live Encoder for Android
+						</h3>
+						</dd>
+						<dd>安全播出
+							<h3>在采用HLS协议和RTMP协议的流媒体直播和点播应用中，我们能够提供成熟、规范的解决方法来确保播出内容的安全性，在视频加密和密钥保护与传递方面拥有经过项目验证的方案。</h3>
+						</dd>
+						<dd>视频会议
+							<h3>云视睿博拥有视频会议MCU产品，可以为您提供通用和定制化的产品和服务。</h3>
+						</dd>
+						<dd>图像识别/语音识别领域
+							<h3>我们在图像识别和语音识别方向正在进行积极的研究开发，并有了一定的成果。</h3>
+						</dd>
+						<dd>1对1远程教育
+							<h3>针对1对1远程教育模式，我们开发了1对1的视频对话和电脑屏幕共享技术，老师和同学在进行视频对话的同时可以实时分享电脑屏幕、应用软件、Word文档、PPT讲稿等内容。</h3>
+						</dd>
+					</dl>
+					</div>
+				</div>
+			</div>
+
+			<img src="{% static "images/round_bottom_support.jpg" %}" class="fl"/> </div>
+	</div>
+{#     {% static_placeholder  "Globle RB" %}#}
+{#     {% placeholder  "RB" %}#}
+
+
+	<div class="clear"></div>
+</div>
+
+<!--main end-->
+{% endblock  %}

@@ -4,13 +4,16 @@
 <ul class="menu">
 
 				<!--产品开始-->
-				<li class="li2" ><a href="#">产品</a>
+				<li class="li2" >
+                    {% static_placeholder 'top_menu_1' or%}<a href="#">产品</a>{% endstatic_placeholder %}
+{#                    <a href="#">产品</a>#}
 {#				<li class="li2" style="width:600px;"><a href="#">产品</a>#}
 {#				<li class="li2"><a href="#">{% placeholder 'top_menu1' %}</a>#}
 					<div class="b" >
 {#                           {% placeholder menu_1 %}#}
 						<div>
-                            {% placeholder menu_1 %}
+                            {% static_placeholder 'menu_1' %}
+
 {##}
 {#							<dl>#}
 {#								<dt><a href="/products/encode_vedio/products.html">直播设备和软件</a></dt>#}
@@ -36,14 +39,12 @@
 
 				<!--解决方案开始-->
 				<li class="li0">
-                    {% static_placeholder 'top_menu_2' or%}解决方案{% endstatic_placeholder %}
+                    {% static_placeholder 'top_menu_2' or%}<a href="#">解决方案</a>{% endstatic_placeholder %}
 {#                 {% placeholder 'Info Banner' or%}<img src="{% static "images/research_cooperation.jpg" %}">{% endplaceholder %}#}
 
                    <div class="b">
-{#                     {% static_placeholder menu_2 or%}没有菜单2{% endstatic_placeholder %}#}
-                     {% placeholder menu_2 or%}没有菜单2{% endplaceholder %}
-
-                </div>
+                     {% static_placeholder 'menu_2' %}
+                   </div>
 {#					<div class="b">#}
 {#						<div>#}
 {#							<dl>#}
@@ -66,8 +67,14 @@
 
 
 
-				<li class="li1"><a href="/cases/aopeng/aopeng.html">商用案例 </a>
+				<li class="li1">
+                    {% static_placeholder 'top_menu_3' or%}<a href="#">商用案例</a>{% endstatic_placeholder %}
+
+{#                    <a href="/cases/aopeng/aopeng.html">商用案例 </a>#}
 					<div class="b">
+
+                        {% static_placeholder 'menu_3' %}
+
 						<div style="float:left;width:600px;height:310px;margin-top:20px;border-right:#ccc solid 1px;">
 							<ul style="padding:0;">
 								<li style="padding:0;">
@@ -115,8 +122,11 @@
 				</li>
 
 				<!--研发合作开始-->
-				<li class="li3"><a href="/research_cooperation/research_cooperation.html">研发合作</a>
+				<li class="li3">
+                    {% static_placeholder 'top_menu_4' or%}<a href="#">研发合作</a>{% endstatic_placeholder %}
+{#                    <a href="/research_cooperation/research_cooperation.html">研发合作</a>#}
 				<div class="b">
+                    {% static_placeholder 'menu_4' %}
 						<div>
 							<ul>
 								<li><a href="/research_cooperation/research_cooperation.html">
@@ -135,8 +145,11 @@
 
 				<!--研发合作结束-->
 
-				<li class="li4"><a href="/support/support.html">技术支持</a>
+				<li class="li4">
+                    {% static_placeholder 'top_menu_5' or%}<a href="#">技术支持</a>{% endstatic_placeholder %}
+{#                    <a href="/support/support.html">技术支持</a>#}
 					<div class="b">
+                        {% static_placeholder 'menu_5' %}
 						<div>
 						<img src="http://www.ruiboyun.net/images/support.jpg"/>
 							<ul>
@@ -156,8 +169,11 @@
 						</div>
 					</div>
 				</li>
-				<li class="li5"><a href="/about_us/about_us.html">关于我们</a>
+				<li class="li5">
+                    {% static_placeholder 'top_menu_6' or%}<a href="#">关于我们</a>{% endstatic_placeholder %}
+{#                    <a href="/about_us/about_us.html">关于我们</a>#}
 					<div class="b">
+                        {% static_placeholder 'menu_6' %}
 						<div>
 							<ul>
 								<li><a href="/about_us/about_us.html">

@@ -105,7 +105,10 @@ def list04(instance):
 @register.filter()
 def tabs_01(instance):
 	print instance.tag
-	pages = Page.objects.filter(tagextension__tag=instance.tag)
+	try:
+		pages = Page.objects.filter(tagextension__tag=instance.tag)
+	except:
+		return ''
 	body_ = ''
 	for page in pages:
 		title = page.get_title()
@@ -225,6 +228,7 @@ def show_sub_page_in_post(reverse_id):
 	except Page.MultipleObjectsReturned:
 		return u'请注意！有多个页面带有相同reverse_id'
 
+
 	if page is None:
 		return None
 	if page.children is None:
@@ -232,7 +236,14 @@ def show_sub_page_in_post(reverse_id):
 	for children in page.children.all():
 		url = children.get_absolute_url()
 		title = children.get_title()
-		brief = children.tagextension.brief
+		try:
+			brief = children.tagextension.brief
+		except Page.DoesNotExist as e:
+			print e
+			brief = u'该页面没有简介'
+		except Exception as e:
+			print e
+			brief = ''
 		if len(brief) <= 0:
 			brief = u'该页面没有简介'
 

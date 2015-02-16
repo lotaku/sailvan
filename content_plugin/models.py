@@ -71,8 +71,8 @@ class RightBox(CObject):
 class IndexShowBox(CObject):
 	TEMPLATE_CHOICES = [(u'index_show_box_common', u'常规')	]
 	template = models.CharField(max_length=256, choices=TEMPLATE_CHOICES, default=1)
-	title_url = models.URLField(max_length=256, blank=True, null=True)
-	body_url = models.URLField(max_length=256, blank=True, null=True)
+	title_url = models.CharField(max_length=256, blank=True, null=True)
+	body_url = models.CharField(max_length=256, blank=True, null=True)
 	# style
 	css_top = models.CharField(max_length=256, blank=True, null=True)
 	css_left = models.CharField(max_length=256, blank=True, null=True)

@@ -1,0 +1,16 @@
+# 请注意，目前内容还未填充完全。
+
+# 该网站的配置过程：
+
+1,进入项目目录
+cd tutorial-project
+
+2, 安装 pip 依赖包
+pip install -r requirements.pip
+
+3, 运行网站（测试环境下的，数据库使用 SQLite3）
+python manage.py runserver
+
+4,打开以下地址，访问网站
+http://127.0.0.1:8000
+

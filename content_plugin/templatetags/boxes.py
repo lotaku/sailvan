@@ -228,7 +228,6 @@ def show_sub_page_in_post(reverse_id):
 	except Page.MultipleObjectsReturned:
 		return u'请注意！有多个页面带有相同reverse_id'
 
-
 	if page is None:
 		return None
 	if page.children is None:

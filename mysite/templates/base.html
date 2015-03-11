@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% block title %}This is my new project home page{% endblock title %}</title>
+    <title>{% block title %}{{ request.current_page }}{% endblock title %}</title>
     {% include 'content/head.html' %}
     {% render_block "css" %}
   {% block other_head %}

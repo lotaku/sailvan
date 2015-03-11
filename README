@@ -1,6 +1,11 @@
+
+# 本项目有我个人通过阅读官方文档，独立开发完成的。
 # 请注意，目前内容还未填充完全。
+# 项目是一边学习一边开发，目前大体框架已经做好，可以在测试服务器上给用户测试使用，
+# 并根据用户的试用反馈修改BUG，以及开发新的插件，满足客户的新业务需求。
 
 # 该网站的配置过程：
+# 前提条件：使用virtualenv 配置独立的开发依赖环境并激活
 
 1,进入项目目录
 cd tutorial-project
@@ -9,7 +14,7 @@ cd tutorial-project
 pip install -r requirements.pip
 
 3, 运行网站（测试环境下的，数据库使用 SQLite3）
-python manage.py runserver
+python manage.py runserver 127.0.0.1:8000
 
 4,打开以下地址，访问网站
 http://127.0.0.1:8000
